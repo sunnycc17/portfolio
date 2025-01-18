@@ -14,7 +14,9 @@
   <body class="bg-black">
     <header class="flex justify-center bg-purple-400 rounded-sm">
       <nav id="navbar">
-        <ul class="flex flex-row justify-between items-center space-x-4">
+        <ul
+          class="flex flex-row justify-between items-center space-x-4 2xl:text-2xl 2xl:space-x-10 lg:text-xl lg:space-x-7"
+        >
           <li class="hover:bg-purple-700 p-2 rounded transition duration-300">
             <a href="#welcome-section" class="nav-link">Welcome</a>
           </li>
@@ -33,11 +35,14 @@
       class="relative flex flex-col justify-center items-center h-screen overflow-hidden"
     >
       <h1
-        class="relative z-10 text-white text-4xl font-light border border-white p-2 flex-wrap text-center"
+        class="relative z-10 text-white text-4xl sm:text-3xl font-light border border-white p-2 sm:p-4 text-center 2xl:text-6xl xl:text-5xl"
       >
         Hello, I'm Krista.
       </h1>
-      <p class="relative z-10 text-lg text-white mt-2">A Front-End Developer</p>
+
+      <p class="relative z-10 text-lg 2xl:text-3xl xl:text-xl text-white mt-3">
+        A Front-End Developer
+      </p>
     </section>
 
     <section
@@ -45,7 +50,7 @@
       class="text-white flex flex-col items-center p-5 my-20"
     >
       <h1
-        class="p-2 m-5 text-purple-50 font-extralight text-2xl border-b border-white text-wrap text-center"
+        class="p-2 m-5 text-purple-50 font-extralight text-2xl 2xl:text-5xl border-b border-white text-wrap text-center"
       >
         These are some of my projects
       </h1>
@@ -59,10 +64,12 @@
     </section>
     <section
       id="contact"
-      class="flex flex-col justify-center text-wrap items-center p-5 my-20 m-5 text-white gap-5"
+      class="flex flex-col justify-center text-wrap items-center p-5 my-20 m-5 text-white gap-5 xl:text-3xl"
     >
       <h1 class="text-2xl p-2">Let's work together!</h1>
-      <p class="text-2xl p-1.5 mb-5 text-purple-400 italic font-extralight text-wrap text-center">
+      <p
+        class="text-2xl p-1.5 mb-5 text-purple-400 italic font-extralight text-wrap text-center"
+      >
         What's your favorite sandwich?
       </p>
       <div
