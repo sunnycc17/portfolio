@@ -2,7 +2,7 @@
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 
 // script.js (in the root folder)
-import { socialMediaLinks } from './data/socialMediaData.js'; // Import social media data
+import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
 
 const socialMediasContainer = document.querySelector('.social-medias'); // Select the container
 
