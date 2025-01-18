@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gradient {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(to right, white, gray);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: transparent; /* Set initial color to transparent */
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientMove 3s infinite ease-in-out;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
