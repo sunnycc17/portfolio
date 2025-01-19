@@ -68,26 +68,85 @@ projects.forEach((project) => {
   container.appendChild(anchor);
 });
 
+// SKILL ICONS 
+
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("skills-container");
+  const grid = document.getElementById("skills-grid");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
 
-  // Create a grid container
-  const grid = document.createElement("div");
-  grid.className = "grid grid-cols-2 sm:grid-cols-4 gap-4";
+  let currentIndex = 0;
+  const itemsPerPage = 4; // Show 4 skills at a time
 
-  // Add skill icons dynamically
-  skills.forEach((skill) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "flex items-center justify-center p-2 border border-gray-200 rounded-lg hover:cursor-pointer hover:scale-105 transition ease-in-out duration:300 hover:bg-purple-700";
+  function renderSkills(index) {
+    grid.innerHTML = ""; // Clear current skills
+    const visibleSkills = skills.slice(index, index + itemsPerPage);
 
-    const img = document.createElement("img");
-    img.src = skill.src;
-    img.alt = skill.alt;
-    img.className = "w-16 h-16"; // Adjust size here
+    visibleSkills.forEach((skill) => {
+      const wrapper = document.createElement("div");
+      wrapper.className =
+        "relative flex flex-col items-center p-6 border border-gray-200 rounded-lg shadow-md hover:bg-purple-700 transition-transform duration-300 ease-in-out cursor-pointer";
 
-    wrapper.appendChild(img);
-    grid.appendChild(wrapper);
-  });
+      // Skill Image
+      const img = document.createElement("img");
+      img.src = skill.src;
+      img.alt = skill.alt;
+      img.className = "w-20 h-20"; // Adjust icon size here
 
-  container.appendChild(grid);
+      // Skill Name
+      const name = document.createElement("p");
+      name.textContent = skill.name;
+      name.className = "mt-3 text-sm font-semibold text-white";
+
+      // Star Ratings
+      const stars = document.createElement("div");
+      stars.className = "mt-2 text-purple-200";
+      stars.innerHTML = "★".repeat(skill.stars) + "☆".repeat(5 - skill.stars); // Fill stars logic
+
+      // Tooltip on click (name + stars)
+      const tooltip = document.createElement("div");
+      tooltip.className =
+        "absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-300";
+      tooltip.innerHTML = `<div>${skill.name}</div><div>${"★".repeat(skill.stars)}</div>`;
+
+      let isTooltipVisible = false;
+      wrapper.addEventListener("click", (e) => {
+        e.stopPropagation();
+        isTooltipVisible = !isTooltipVisible;
+        tooltip.style.opacity = isTooltipVisible ? "1" : "0";
+        tooltip.style.pointerEvents = isTooltipVisible ? "auto" : "none";
+      });
+
+      document.addEventListener("click", () => {
+        if (isTooltipVisible) {
+          tooltip.style.opacity = "0";
+          tooltip.style.pointerEvents = "none";
+          isTooltipVisible = false;
+        }
+      });
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(name);
+      wrapper.appendChild(stars);
+      wrapper.appendChild(tooltip);
+      grid.appendChild(wrapper);
+    });
+  }
+
+  function updateCarousel(direction) {
+    const maxIndex = skills.length - itemsPerPage;
+    if (direction === "next") {
+      currentIndex = (currentIndex + itemsPerPage) > maxIndex ? 0 : currentIndex + itemsPerPage;
+    } else {
+      currentIndex = (currentIndex - itemsPerPage) < 0 ? maxIndex : currentIndex - itemsPerPage;
+    }
+    renderSkills(currentIndex);
+  }
+
+  // Initial render
+  renderSkills(currentIndex);
+
+  nextBtn.addEventListener("click", () => updateCarousel("next"));
+  prevBtn.addEventListener("click", () => updateCarousel("prev"));
 });
+

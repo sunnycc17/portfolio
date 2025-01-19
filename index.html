@@ -80,12 +80,36 @@
     </section>
 
     <!-- add skill/tools toggle section -->
+    <!-- fix size issue on some skill containers -->
     <section
       id="skills"
-      class="my-20 px-10 flex flex-col gap-5 justify-center items-center"
-    >  
-    <h4 class="text-2xl border-b ">Toolbox</h4>
-      <div id="skills-container" class="p-5"></div>
+      class="my-20 px-10 flex flex-col gap-5 justify-center items-center relative"
+    >
+      <h4 class="text-2xl border-b">Toolbox</h4>
+      <div id="skills-wrapper" class="relative flex items-center">
+        <!-- Previous button (moved outside of the container) -->
+        <button
+          id="prev"
+          class="absolute left-[-60px] bg-gray-800 text-white p-3 rounded-full shadow-lg"
+        >
+          ‹
+        </button>
+
+        <div id="skills-container" class="relative p-5 overflow-hidden">
+          <div
+            id="skills-grid"
+            class="grid grid-cols-2 gap-6 transition-transform duration-500 ease-in-out"
+          ></div>
+        </div>
+
+        <!-- Next button (moved outside of the container) -->
+        <button
+          id="next"
+          class="absolute right-[-60px] bg-gray-800 text-white p-3 rounded-full shadow-lg"
+        >
+          ›
+        </button>
+      </div>
     </section>
 
     <section id="projects" class="flex flex-col items-center p-5 my-20">
