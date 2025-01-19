@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add skill icons dynamically
   skills.forEach((skill) => {
     const wrapper = document.createElement("div");
-    wrapper.className = "flex items-center justify-center p-2 border border-gray-200 rounded-lg";
+    wrapper.className = "flex items-center justify-center p-2 border border-gray-200 rounded-lg hover:cursor-pointer hover:scale-105 transition ease-in-out duration:300 hover:bg-purple-700";
 
     const img = document.createElement("img");
     img.src = skill.src;
