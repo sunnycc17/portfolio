@@ -671,8 +671,8 @@ video {
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.place-items-center {
+  place-items: center;
 }
 
 .items-center {
@@ -953,7 +953,53 @@ html {
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
+@media (min-width: 270px) {
+  .xsm\:h-40 {
+    height: 10rem;
+  }
+
+  .xsm\:h-32 {
+    height: 8rem;
+  }
+
+  .xsm\:w-40 {
+    width: 10rem;
+  }
+
+  .xsm\:w-32 {
+    width: 8rem;
+  }
+
+  .xsm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .xsm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .xsm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .xsm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 @media (min-width: 640px) {
+  .sm\:h-56 {
+    height: 14rem;
+  }
+
+  .sm\:w-56 {
+    width: 14rem;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -965,6 +1011,31 @@ html {
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:h-48 {
+    height: 12rem;
+  }
+
+  .md\:w-48 {
+    width: 12rem;
   }
 }
 
@@ -986,6 +1057,11 @@ html {
 }
 
 @media (min-width: 1280px) {
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -995,31 +1071,9 @@ html {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-
-  .xl\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:space-x-7 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.75rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .\32xl\:space-x-9 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.25rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
   .\32xl\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2.5rem * var(--tw-space-x-reverse));
@@ -1031,13 +1085,13 @@ html {
     line-height: 2rem;
   }
 
-  .\32xl\:text-8xl {
-    font-size: 6rem;
-    line-height: 1;
+  .\32xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
-  .\32xl\:text-7xl {
-    font-size: 4.5rem;
+  .\32xl\:text-5xl {
+    font-size: 3rem;
     line-height: 1;
   }
 
@@ -1045,19 +1099,5 @@ html {
     font-size: 3.75rem;
     line-height: 1;
   }
-
-  .\32xl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .\32xl\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .\32xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
 }
+
