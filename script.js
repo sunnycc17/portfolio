@@ -4,6 +4,8 @@ import { projects } from './data/ProjectData.js'; // Import the data from the 'd
 // script.js (in the root folder)
 import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
 
+import { skills } from './data/SkillsData.js';
+
 const socialMediasContainer = document.querySelector('.social-medias'); // Select the container
 
 socialMediaLinks.forEach((link) => {
@@ -64,4 +66,28 @@ projects.forEach((project) => {
 
   // Append anchor to container
   container.appendChild(anchor);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("skills-container");
+
+  // Create a grid container
+  const grid = document.createElement("div");
+  grid.className = "grid grid-cols-2 sm:grid-cols-4 gap-4";
+
+  // Add skill icons dynamically
+  skills.forEach((skill) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "flex items-center justify-center p-2 border border-gray-200 rounded-lg";
+
+    const img = document.createElement("img");
+    img.src = skill.src;
+    img.alt = skill.alt;
+    img.className = "w-16 h-16"; // Adjust size here
+
+    wrapper.appendChild(img);
+    grid.appendChild(wrapper);
+  });
+
+  container.appendChild(grid);
 });
