@@ -26,6 +26,7 @@ socialMediaLinks.forEach((link) => {
   socialMediasContainer.appendChild(anchor);
 });
 
+//FOOTER YEAR FUNCTION
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const container = document.querySelector(".projects"); // Select the projects container
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.getElementById("next");
 
   let currentIndex = 0;
-  const itemsPerPage = 4; // Show 4 skills at a time
+  const itemsPerPage = 6; // Show 4 skills at a time
 
   function renderSkills(index) {
     grid.innerHTML = ""; // Clear current skills
@@ -85,22 +86,22 @@ document.addEventListener("DOMContentLoaded", () => {
     visibleSkills.forEach((skill) => {
       const wrapper = document.createElement("div");
       wrapper.className =
-        "relative flex flex-col items-center p-6 border border-gray-200 rounded-lg shadow-md hover:bg-violet-900 transition-colors duration-300 ease-in-out cursor-pointer";
+      "relative flex flex-col items-center p-4 border border-gray-200 rounded-lg shadow-md hover:bg-violet-900 transition-colors duration-300 ease-in-out cursor-pointer w-32 h-40";
 
       // Skill Image
       const img = document.createElement("img");
       img.src = skill.src;
       img.alt = skill.alt;
-      img.className = "w-20 h-20"; // Adjust icon size here
+      img.className = " w-19 h-19 object-contain"; // Adjust icon size here
 
       // Skill Name
       const name = document.createElement("p");
       name.textContent = skill.name;
-      name.className = "mt-3 text-sm font-semibold text-white";
+      name.className = "mt-3 text-sm font-semibold text-white text-center text-wrap break-words max-w-[80px] w-24 h-12 leading-tight";
 
       // Star Ratings
       const stars = document.createElement("div");
-      stars.className = "mt-2 text-purple-200";
+      stars.className = "mt-1 text-purple-200";
       stars.innerHTML = "★".repeat(skill.stars) + "☆".repeat(5 - skill.stars); // Fill stars logic
 
       // Tooltip on click (name + stars)
