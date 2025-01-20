@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     visibleSkills.forEach((skill) => {
       const wrapper = document.createElement("div");
       wrapper.className =
-        "relative flex flex-col items-center p-6 border border-gray-200 rounded-lg shadow-md hover:bg-purple-700 transition-transform duration-300 ease-in-out cursor-pointer";
+        "relative flex flex-col items-center p-6 border border-gray-200 rounded-lg shadow-md hover:bg-violet-900 transition-colors duration-300 ease-in-out cursor-pointer";
 
       // Skill Image
       const img = document.createElement("img");
@@ -146,7 +146,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render
   renderSkills(currentIndex);
 
-  nextBtn.addEventListener("click", () => updateCarousel("next"));
-  prevBtn.addEventListener("click", () => updateCarousel("prev"));
+  //CLICK EVENT FOR BUTTONS
+
+  nextBtn.addEventListener("click", () => {updateCarousel("next")
+    nextBtn.classList.add("bg-sky-400");
+
+    setTimeout(() => {
+      nextBtn.classList.remove("bg-sky-400");
+    }, 300);
+  });
+  prevBtn.addEventListener("click", () => {updateCarousel("prev")
+    prevBtn.classList.add("bg-sky-400");
+
+    setTimeout(() => {
+      prevBtn.classList.remove("bg-sky-400");
+    }, 300);
+  });
 });
 
