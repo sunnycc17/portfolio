@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -12,18 +12,18 @@
     <title>Portfolio</title>
   </head>
   <body class="bg-black text-white">
-    <header class="flex justify-center text-black bg-purple-400 rounded-sm">
+    <header class="flex justify-center rounded-sm bg-purple-400 text-black">
       <nav id="navbar">
         <ul
-          class="flex flex-row justify-between items-center space-x-4 2xl:text-2xl 2xl:space-x-10 lg:text-xl lg:space-x-7 xsm:text-sm"
+          class="flex flex-row items-center justify-between space-x-4 xsm:text-sm lg:space-x-7 lg:text-xl 2xl:space-x-10 2xl:text-2xl"
         >
-          <li class="hover:bg-purple-700 p-2 rounded transition duration-300">
+          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
             <a href="#welcome-section" class="nav-link">Welcome</a>
           </li>
-          <li class="hover:bg-purple-700 p-2 rounded transition duration-300">
+          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
             <a href="#projects" class="nav-link">Projects</a>
           </li>
-          <li class="hover:bg-purple-700 p-2 rounded transition duration-300">
+          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
             <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
@@ -32,16 +32,16 @@
 
     <section
       id="welcome-section"
-      class="relative flex flex-col justify-center items-center h-screen overflow-hidden"
+      class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
     >
       <h1
-        class="relative z-10 text-4xl sm:text-3xl font-light border border-white p-2 sm:p-4 text-center 2xl:text-6xl xl:text-5xl xsm:text-lg"
+        class="relative z-10 border border-white p-2 text-center text-4xl font-light xsm:text-lg sm:p-4 sm:text-3xl xl:text-5xl 2xl:text-6xl"
       >
         Hello, I'm Krista.
       </h1>
 
       <p
-        class="relative z-10 text-lg 2xl:text-3xl xl:text-xl mt-3 xsm:text-base"
+        class="relative z-10 mt-3 text-lg xsm:text-base xl:text-xl 2xl:text-3xl"
       >
         A Front-End Developer
       </p>
@@ -49,16 +49,19 @@
 
     <section
       id="About"
-      class="flex flex-col justify-center items-center text-center text-wrap p-8 my-20"
+      class="my-20 flex flex-col items-center justify-center text-wrap p-8 text-center"
     >
       <div>
         <h2
-          class="p-2 m-5 text-2xl 2xl:text-5xl xsm:text-lg border-b text-wrap text-center"
+          class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
         >
           About me
         </h2>
         <!-- ADJUST  -->
-        <div class="flex flex-col gap-2 px-20 md:text-lg md:px-10 xsm:text-xs xsm:px-5">
+        <!-- about me section -->
+        <div
+          class="flex flex-col gap-2 px-20 xsm:px-5 xsm:text-xs md:px-10 md:text-lg"
+        >
           <p>
             A driven front-end developer dedicated to creating functional and
             visually stunning web experiences. I approach every project with an
@@ -85,10 +88,10 @@
     <!-- add skill/tools toggle section -->
     <section
       id="skills"
-      class="my-20 px-10 flex flex-col gap-5 justify-center items-center relative"
+      class="relative my-20 flex flex-col items-center justify-center gap-5 px-10"
     >
       <h3
-        class="p-2 m-5 text-2xl 2xl:text-5xl xsm:text-lg border-b text-wrap text-center"
+        class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
         Toolbox
       </h3>
@@ -96,11 +99,11 @@
         <!-- Previous button (moved outside of the container) -->
         <button
           id="prev"
-          class="absolute left-[-80px] text-white p-2 rounded-3xl shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
+          class="absolute left-[-80px] rounded-3xl p-2 text-white shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-7 h-7"
+            class="h-7 w-7"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -124,11 +127,11 @@
         <!-- Next button (moved outside of the container) -->
         <button
           id="next"
-          class="absolute right-[-80px] text-white p-2 rounded-3xl shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
+          class="absolute right-[-80px] rounded-3xl p-2 text-white shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-7 h-7"
+            class="h-7 w-7"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -144,14 +147,14 @@
       </div>
     </section>
 
-    <section id="projects" class="flex flex-col items-center p-5 my-20">
+    <section id="projects" class="my-20 flex flex-col items-center p-5">
       <h4
-        class="p-2 m-5 text-2xl 2xl:text-5xl xsm:text-lg border-b text-wrap text-center"
+        class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
         These are some of my projects
       </h4>
       <div
-        class="projects p-2 m-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center"
+        class="projects m-5 grid grid-cols-1 place-items-center gap-6 p-2 sm:grid-cols-2 lg:grid-cols-3"
       ></div>
 
       <a href="" class="show-all">
@@ -160,14 +163,14 @@
     </section>
     <section
       id="contact"
-      class="flex flex-col justify-center text-wrap items-center p-5 my-20 m-5 gap-5 xl:text-3xl text-center"
+      class="m-5 my-20 flex flex-col items-center justify-center gap-5 text-wrap p-5 text-center xl:text-3xl"
     >
-      <h5 class="text-2xl p-2">Let's work together!</h5>
-      <p class="text-2xl p-1.5 mb-5 text-purple-400 italic font-extralight">
+      <h5 class="p-2 text-2xl">Let's work together!</h5>
+      <p class="mb-5 p-1.5 text-2xl font-extralight italic text-purple-400">
         What's your favorite sandwich?
       </p>
       <div
-        class="social-medias flex flex-row justify-between items-center gap-6"
+        class="social-medias flex flex-row items-center justify-between gap-6"
       ></div>
       <p class="pt-5 text-gray-50">
         So Call Me <em class="text-gradient">Maybe..?</em>
@@ -175,7 +178,7 @@
     </section>
     <footer
       title="Thanks for visiting!c:"
-      class="text-black bg-purple-400 flex justify-center items-center p-1.5"
+      class="flex items-center justify-center bg-purple-400 p-1.5 text-black"
     >
       @<span id="year" class="mr-1"></span>sunnycc17_
     </footer>
