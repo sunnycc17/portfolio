@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html", "./*.js"], // Corrected syntax for content paths
+  content: ['./*.html', './*.js'], // Corrected syntax for content paths
   theme: {
     extend: {
       screens: {
