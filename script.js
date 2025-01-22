@@ -48,18 +48,16 @@ const container = document.querySelector('.projects'); // Select the projects co
 projects.forEach((project) => {
   /**
    * Creates and appends a project tile for each project.
-   * @param {Object} project - The project object containing the href, imgSrc, alt, title, and tooltip.
+   * @param {Object} project - The project object containing the href, imgSrc, alt and title.
    * @param {string} project.href - The URL to the project's page.
    * @param {string} project.imgSrc - The source URL of the project image.
    * @param {string} project.alt - The alt text for the project image.
    * @param {string} project.title - The title of the project.
-   * @param {string} project.tooltip - The tooltip text displayed on hover.
    */
   const anchor = document.createElement('a');
   anchor.setAttribute('href', project.href);
   anchor.setAttribute('target', '_blank');
   anchor.className = 'project-tile block hover:cursor-pointer';
-  anchor.setAttribute('title', project.tooltip); // <--- This line adds the tooltip
 
   // Create inner div
   const div = document.createElement('div');
@@ -128,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = document.createElement('img');
       img.src = skill.src;
       img.alt = skill.alt;
-      img.className = ' w-10 h-10 object-contain aspect-square'; // Adjust icon size here
+      img.className = ' w-10 h-10 object-contain aspect-square'; // Adjust icon size herea
 
       // Skill Name
       const name = document.createElement('p');
@@ -141,32 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
       stars.className = 'text-sm text-purple-200';
       stars.innerHTML = '★'.repeat(skill.stars) + '☆'.repeat(5 - skill.stars); // Fill stars logic
 
-      // Tooltip on click (name + stars)
-      const tooltip = document.createElement('div');
-      tooltip.className =
-        'absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm px-4 py-2 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-300';
-      tooltip.innerHTML = `<div>${skill.name}</div><div>${'★'.repeat(skill.stars)}</div>`;
-
-      let isTooltipVisible = false;
-      wrapper.addEventListener('click', (e) => {
-        e.stopPropagation();
-        isTooltipVisible = !isTooltipVisible;
-        tooltip.style.opacity = isTooltipVisible ? '1' : '0';
-        tooltip.style.pointerEvents = isTooltipVisible ? 'auto' : 'none';
-      });
-
-      document.addEventListener('click', () => {
-        if (isTooltipVisible) {
-          tooltip.style.opacity = '0';
-          tooltip.style.pointerEvents = 'none';
-          isTooltipVisible = false;
-        }
-      });
-
       wrapper.appendChild(img);
       wrapper.appendChild(name);
       wrapper.appendChild(stars);
-      wrapper.appendChild(tooltip);
       grid.appendChild(wrapper);
     });
 
