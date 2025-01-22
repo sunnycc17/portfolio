@@ -17,8 +17,8 @@ export const skills = [
   { src: 'public/react.png', alt: 'React Icon', name: 'React', stars: 3 },
   {
     src: 'public/accessibility.png',
-    alt: 'Accessibility Icon',
-    name: 'Accessibility',
+    alt: 'a11y Icon',
+    name: 'A11y',
     stars: 4,
   },
   { src: 'public/seo.png', alt: 'SEO Icon', name: 'SEO', stars: 4 },
@@ -57,8 +57,8 @@ export const skills = [
   { src: 'public/vite.png', alt: 'Vite Icon', name: 'Vite', stars: 4 },
   {
     src: 'public/google-analytics.png',
-    alt: 'Google Analytics Icon',
-    name: 'Google Analytics',
+    alt: 'GAnalytics Icon',
+    name: 'GAnalytics',
     stars: 3,
   },
   {
