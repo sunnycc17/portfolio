@@ -95,9 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('skills-grid');
   const prevBtn = document.getElementById('prev');
   const nextBtn = document.getElementById('next');
+  const dotsContainer = document.getElementById('pagination-dots');
 
   let currentIndex = 0;
   const itemsPerPage = 6; // Show 6 skills at a time
+  const totalPages = Math.ceil(skills.length / itemsPerPage);
 
   /**
    * Renders a set of skills based on the current index and items per page.
@@ -165,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
       wrapper.appendChild(tooltip);
       grid.appendChild(wrapper);
     });
+
+    updatePaginationDots(index / itemsPerPage);
   }
 
   /**
@@ -185,6 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
           : currentIndex - itemsPerPage;
     }
     renderSkills(currentIndex);
+  }
+
+  function updatePaginationDots(activeIndex) {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalPages; i++) {
+      const dot = document.createElement('div');
+      dot.className = `h-3 w-3 rounded-full cursor-pointer ${
+        i === activeIndex ? 'bg-purple-400' : 'bg-gray-500'
+      } transition duration-300`;
+
+      dot.addEventListener('click', () => {
+        currentIndex = i * itemsPerPage;
+        renderSkills(currentIndex);
+      });
+
+      dotsContainer.appendChild(dot);
+    }
   }
 
   // Initial render
