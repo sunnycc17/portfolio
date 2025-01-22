@@ -16,7 +16,7 @@
     />
     <title>Portfolio</title>
   </head>
-  <body class="bg-black text-white">
+  <body>
     <header class="flex justify-center rounded-sm bg-purple-400 text-black">
       <nav id="navbar">
         <ul
@@ -40,8 +40,9 @@
       class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
     >
       <h1
-        data-aos="fade-up"
+        data-aos="zoom-in"
         data-aos-delay="300"
+        data-aos-easing="ease-in-out"
         class="relative z-10 border border-white p-2 text-center text-4xl font-light xsm:text-lg sm:p-4 sm:text-3xl xl:text-5xl 2xl:text-6xl"
       >
         Hello, I'm Krista.
@@ -49,7 +50,7 @@
 
       <p
         data-aos="fade-up"
-        data-aos-delay="450"
+        data-aos-delay="300"
         class="relative z-10 mt-3 text-lg xsm:text-base xl:text-xl 2xl:text-3xl"
       >
         A Front-End Developer
@@ -57,37 +58,34 @@
     </section>
 
     <section
-      data-aos="fade-up"
-      data-aos-delay="400"
       id="About"
-      class="my-20 flex flex-col items-center justify-center text-wrap p-8 text-center"
+      class="my-20 flex flex-col items-center justify-center gap-5 px-10 text-center"
     >
       <div>
         <h2
-          class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
+          data-aos="fade-up"
+          class="m-5 mx-auto max-w-28 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
         >
           About me
         </h2>
-        <!-- ADJUST  -->
-        <!-- about me section -->
         <div
           class="flex flex-col gap-2 px-20 xsm:px-5 xsm:text-xs md:px-10 md:text-lg"
         >
-          <p>
+          <p data-aos="fade-up" data-aos-delay="300" class="p-2">
             A driven front-end developer dedicated to creating functional and
             visually stunning web experiences. I approach every project with an
             insatiable urge to learn, improve, and outdo my previous self.
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="350" class="p-2">
             My passion for growth extends beyond coding—I challenge myself daily
             through hard work and discipline, whether it’s perfecting a design,
             mastering a new language, or pushing my limits in the gym.
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="400" class="p-2">
             Managing my time efficiently is my strength, allowing me to balance
             learning, delivering on deadlines, and striving for excellence.
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="450" class="p-2">
             With a unique blend of creativity, focus, and determination, I’m
             committed to building purposeful, impactful projects that inspire
             and perform.
@@ -96,7 +94,7 @@
       </div>
     </section>
 
-    <!-- add skill/tools toggle section -->
+    <!-- SKILLBOX -->
     <section
       data-aos="fade-up"
       data-aos-delay="400"
@@ -104,13 +102,20 @@
       class="relative my-20 flex flex-col items-center justify-center gap-5 px-10"
     >
       <h3
-        class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
+        class="m-5 mx-auto max-w-28 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
         Toolbox
       </h3>
-      <div id="skills-wrapper" class="relative flex items-center">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="450"
+        id="skills-wrapper"
+        class="relative flex items-center"
+      >
         <!-- Previous button (moved outside of the container) -->
         <button
+          data-aos="zoom-in"
+          data-aos-delay="500"
           id="prev"
           class="absolute left-[-80px] rounded-3xl p-2 text-white shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
         >
@@ -139,6 +144,8 @@
 
         <!-- Next button (moved outside of the container) -->
         <button
+          data-aos="zoom-in"
+          data-aos-delay="500"
           id="next"
           class="absolute right-[-80px] rounded-3xl p-2 text-white shadow-lg shadow-indigo-500/50 transition-colors duration-300 ease-in-out"
         >
@@ -171,9 +178,9 @@
       class="my-20 flex flex-col items-center p-5"
     >
       <h4
-        class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
+        class="m-5 mx-auto max-w-28 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
-        These are some of my projects
+        Projects
       </h4>
       <div
         class="projects m-5 grid grid-cols-1 place-items-center gap-6 p-2 sm:grid-cols-2 lg:grid-cols-3"

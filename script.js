@@ -64,7 +64,7 @@ projects.forEach((project) => {
   // Create inner div
   const div = document.createElement('div');
   div.className =
-    'w-64 h-64 p-4 rounded-lg border border-gray-300 shadow-lg shadow-[rgba(117,61,89,0.62)] flex items-center justify-center'; // Fixed width and height for a square shape
+    'w-64 h-64 p-4 rounded-lg border border-gray-300 shadow-lg shadow-black  flex items-center justify-center'; // Fixed width and height for a square shape
 
   // Create img element
   const img = document.createElement('img');
@@ -238,7 +238,7 @@ AOS.init({
   debug: true, // Show AOS debug logs in the console
   duration: 1000, // Animation duration (ms)
   delay: 200, // Delay before animation starts
-  easing: 'ease', // Type of easing (default: 'ease')
+  easing: 'ease-in-out', // Type of easing 
   once: false, // Should animation happen only once?
   mirror: false, // Should elements animate when scrolling back up?
   anchorPlacement: 'top-bottom', // Where animation triggers
