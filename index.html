@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/output.css" />
+    <!-- AOS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <link rel="icon" href="public/flower.png" type="image/png" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
@@ -35,12 +40,16 @@
       class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
     >
       <h1
+        data-aos="fade-up"
+        data-aos-delay="300"
         class="relative z-10 border border-white p-2 text-center text-4xl font-light xsm:text-lg sm:p-4 sm:text-3xl xl:text-5xl 2xl:text-6xl"
       >
         Hello, I'm Krista.
       </h1>
 
       <p
+        data-aos="fade-up"
+        data-aos-delay="450"
         class="relative z-10 mt-3 text-lg xsm:text-base xl:text-xl 2xl:text-3xl"
       >
         A Front-End Developer
@@ -48,6 +57,8 @@
     </section>
 
     <section
+      data-aos="fade-up"
+      data-aos-delay="400"
       id="About"
       class="my-20 flex flex-col items-center justify-center text-wrap p-8 text-center"
     >
@@ -87,6 +98,8 @@
 
     <!-- add skill/tools toggle section -->
     <section
+      data-aos="fade-up"
+      data-aos-delay="400"
       id="skills"
       class="relative my-20 flex flex-col items-center justify-center gap-5 px-10"
     >
@@ -151,7 +164,12 @@
       ></div>
     </section>
 
-    <section id="projects" class="my-20 flex flex-col items-center p-5">
+    <section
+      data-aos="fade-up"
+      data-aos-delay="500"
+      id="projects"
+      class="my-20 flex flex-col items-center p-5"
+    >
       <h4
         class="m-5 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
@@ -166,6 +184,8 @@
       </a>
     </section>
     <section
+      data-aos="fade-up"
+      data-aos-delay="400"
       id="contact"
       class="m-5 my-20 flex flex-col items-center justify-center gap-5 text-wrap p-5 text-center xl:text-3xl"
     >
@@ -187,6 +207,8 @@
       @<span id="year" class="mr-1"></span>sunnycc17_
     </footer>
   </body>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script type="module" src="./script.js"></script>
   <!-- Include the JS module -->
 </html>

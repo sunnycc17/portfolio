@@ -1,3 +1,5 @@
+/* global AOS */
+
 // script.js (in the root folder)
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
@@ -230,4 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
       prevBtn.classList.remove('bg-sky-400');
     }, 300);
   });
+});
+
+AOS.init({
+  debug: true, // Show AOS debug logs in the console
+  duration: 1000, // Animation duration (ms)
+  delay: 200, // Delay before animation starts
+  easing: 'ease', // Type of easing (default: 'ease')
+  once: false, // Should animation happen only once?
+  mirror: false, // Should elements animate when scrolling back up?
+  anchorPlacement: 'top-bottom', // Where animation triggers
 });
