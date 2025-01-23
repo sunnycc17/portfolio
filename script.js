@@ -93,6 +93,8 @@ projects.forEach((project) => {
  */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('skills-grid');
+  let touchStartX = 0;
+  let touchEndX = 0;
   const prevBtn = document.getElementById('prev');
   const nextBtn = document.getElementById('next');
   const dotsContainer = document.getElementById('pagination-dots');
@@ -100,6 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   const itemsPerPage = 9; // Show 6 skills at a time
   const totalPages = Math.ceil(skills.length / itemsPerPage);
+
+  //detect touch start position
+  grid.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  //detect touch end positiion and determine swipe direction
+  grid.addEventListener('touchend', (e) => {
+    touchEndX = e.touches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50; // minimum swipe detection distance
+
+    if (touchStartX - touchEndX > swipeThreshold) {
+      updateCarousel('next');
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      updateCarousel('prev');
+    }
+  }
 
   /**
    * Renders a set of skills based on the current index and items per page.
