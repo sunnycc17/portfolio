@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.getElementById('pagination-dots');
 
   let currentIndex = 0;
-  const itemsPerPage = 6; // Show 6 skills at a time
+  const itemsPerPage = 9; // Show 6 skills at a time
   const totalPages = Math.ceil(skills.length / itemsPerPage);
 
   /**
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalPages; i++) {
       const dot = document.createElement('div');
-      dot.className = `h-3 w-3 rounded-full cursor-pointer ${
+      dot.className = `h-2 w-2 rounded-full cursor-pointer ${
         i === activeIndex ? 'bg-purple-400' : 'bg-gray-500'
       } transition duration-300`;
 
