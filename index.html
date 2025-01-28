@@ -19,7 +19,7 @@
   <body>
     <header class="relative z-20 bg-purple-500" x-data="{ open: false }">
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8"
+        class="mx-auto flex max-w-7xl items-center justify-center p-4 lg:px-6"
         aria-label="Global"
       >
         <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
@@ -45,30 +45,30 @@
             </svg>
           </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
+        <div class="hidden lg:flex lg:gap-x-10">
           <a
             href="#Welcome"
-            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            class="rounded-lg px-2 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
             >Welcome</a
           >
           <a
             href="#About"
-            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            class="rounded-lg px-2 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
             >About</a
           >
           <a
             href="#Skills"
-            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            class="rounded-lg px-2 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
             >Skills</a
           >
           <a
             href="#Projects"
-            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            class="rounded-lg px-2 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
             >Projects</a
           >
           <a
             href="#Contact"
-            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            class="rounded-lg px-2 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
             >Contact</a
           >
         </div>
@@ -77,7 +77,7 @@
       <div class="lg:hidden" role="dialog" aria-modal="true">
         <!-- Sidebar, shown only when open is true -->
         <div
-          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-purple-500 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          class="fixed inset-y-0 right-0 z-10 w-64 overflow-y-auto bg-purple-500 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           x-show="open"
           x-cloak
           @click.away="open = false"
@@ -114,24 +114,28 @@
                   @click="open = false"
                   >Welcome</a
                 >
+                <hr />
                 <a
                   href="#About"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
                   @click="open = false"
                   >About</a
                 >
+                <hr />
                 <a
                   href="#skills"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
                   @click="open = false"
                   >Skills</a
                 >
+                <hr />
                 <a
                   href="#Projects"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
                   @click="open = false"
                   >Projects</a
                 >
+                <hr />
                 <a
                   href="#Contact"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
