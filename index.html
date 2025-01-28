@@ -17,26 +17,136 @@
     <title>Portfolio</title>
   </head>
   <body>
-    <header class="flex justify-center rounded-sm bg-purple-400 text-black">
-      <nav id="navbar">
-        <ul
-          class="flex flex-row items-center justify-between space-x-4 xsm:text-sm lg:space-x-7 lg:text-xl 2xl:space-x-10 2xl:text-2xl"
-        >
-          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
-            <a href="#welcome-section" class="nav-link">Welcome</a>
-          </li>
-          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-          <li class="rounded p-2 transition duration-300 hover:bg-purple-700">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
+    <header class="relative z-20 bg-purple-500" x-data="{ open: false }">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            @click="open = true"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a
+            href="#Welcome"
+            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            >Welcome</a
+          >
+          <a
+            href="#About"
+            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            >About</a
+          >
+          <a
+            href="#Skills"
+            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            >Skills</a
+          >
+          <a
+            href="#Projects"
+            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            >Projects</a
+          >
+          <a
+            href="#Contact"
+            class="rounded-lg p-3 text-sm/6 font-semibold text-gray-900 hover:bg-purple-900"
+            >Contact</a
+          >
+        </div>
       </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Sidebar, shown only when open is true -->
+        <div
+          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-purple-500 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          x-show="open"
+          x-cloak
+          @click.away="open = false"
+        >
+          <div class="flex items-center justify-between">
+            <button
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              @click="open = false"
+            >
+              <span class="sr-only">Close menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#Welcome"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
+                  @click="open = false"
+                  >Welcome</a
+                >
+                <a
+                  href="#About"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
+                  @click="open = false"
+                  >About</a
+                >
+                <a
+                  href="#skills"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
+                  @click="open = false"
+                  >Skills</a
+                >
+                <a
+                  href="#Projects"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
+                  @click="open = false"
+                  >Projects</a
+                >
+                <a
+                  href="#Contact"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-purple-900"
+                  @click="open = false"
+                  >Contact</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <section
-      id="welcome-section"
+      id="Welcome"
       class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
     >
       <h1
@@ -47,50 +157,41 @@
       >
         Hello, I'm Krista.
       </h1>
-
-      <p
-        data-aos="fade-up"
-        data-aos-delay="300"
-        class="relative z-10 mt-3 text-lg xsm:text-base xl:text-xl 2xl:text-3xl"
-      >
-        A Front-End Developer
-      </p>
+      <span id="element" class="inline-block h-6 p-2 align-top"></span>
     </section>
 
     <section
       id="About"
       class="my-20 flex flex-col items-center justify-center gap-5 px-10 text-center"
     >
-      <div>
-        <h2
-          data-aos="fade-up"
-          class="m-5 mx-auto max-w-28 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
-        >
-          About me
-        </h2>
-        <div
-          class="flex flex-col gap-2 px-20 xsm:px-5 xsm:text-xs md:px-10 md:text-lg"
-        >
-          <p data-aos="fade-up" data-aos-delay="300" class="p-2">
-            A driven front-end developer dedicated to creating functional and
-            visually stunning web experiences. I approach every project with an
-            insatiable urge to learn, improve, and outdo my previous self.
-          </p>
-          <p data-aos="fade-up" data-aos-delay="350" class="p-2">
-            My passion for growth extends beyond coding—I challenge myself daily
-            through hard work and discipline, whether it’s perfecting a design,
-            mastering a new language, or pushing my limits in the gym.
-          </p>
-          <p data-aos="fade-up" data-aos-delay="400" class="p-2">
-            Managing my time efficiently is my strength, allowing me to balance
-            learning, delivering on deadlines, and striving for excellence.
-          </p>
-          <p data-aos="fade-up" data-aos-delay="450" class="p-2">
-            With a unique blend of creativity, focus, and determination, I’m
-            committed to building purposeful, impactful projects that inspire
-            and perform.
-          </p>
-        </div>
+      <h2
+        data-aos="fade-up"
+        class="m-5 mx-auto text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
+      >
+        About me
+      </h2>
+      <div
+        class="container flex flex-col items-center justify-center space-y-3 text-center"
+      >
+        <p data-aos="fade-up" data-aos-delay="300">
+          A driven front-end developer dedicated to creating functional and
+          visually stunning web experiences. I approach every project with an
+          insatiable urge to learn, improve, and outdo my previous self.
+        </p>
+        <p data-aos="fade-up" data-aos-delay="350">
+          My passion for growth extends beyond coding—I challenge myself daily
+          through hard work and discipline, whether it’s perfecting a design,
+          mastering a new language, or pushing my limits in the gym.
+        </p>
+        <p data-aos="fade-up" data-aos-delay="400">
+          Managing my time efficiently is my strength, allowing me to balance
+          learning, delivering on deadlines, and striving for excellence.
+        </p>
+        <p data-aos="fade-up" data-aos-delay="450">
+          With a unique blend of creativity, focus, and determination, I’m
+          committed to building purposeful, impactful projects that inspire and
+          perform.
+        </p>
       </div>
     </section>
 
@@ -98,7 +199,7 @@
     <section
       data-aos="fade-up"
       data-aos-delay="400"
-      id="skills"
+      id="Skills"
       class="relative my-20 flex flex-col items-center justify-center p-5"
     >
       <h3
@@ -174,11 +275,11 @@
     <section
       data-aos="fade-up"
       data-aos-delay="500"
-      id="projects"
+      id="Projects"
       class="my-20 flex flex-col items-center p-5"
     >
       <h4
-        class="m-5 mx-auto max-w-28 text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
+        class="m-5 mx-auto text-wrap border-b p-2 text-center text-2xl xsm:text-lg 2xl:text-5xl"
       >
         Projects
       </h4>
@@ -191,7 +292,7 @@
       </a>
     </section>
     <section
-      id="contact"
+      id="Contact"
       class="m-5 my-20 flex flex-col items-center justify-center gap-5 text-wrap p-5 text-center xl:text-3xl"
     >
       <h5 data-aos="fade-up" data-aos-delay="300" class="p-2 text-2xl">
@@ -220,6 +321,10 @@
       @<span id="year" class="mr-1"></span>sunnycc17_
     </footer>
   </body>
+  <!-- typed js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- alpine js -->
+  <script src="//unpkg.com/alpinejs" defer></script>
   <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script type="module" src="./script.js"></script>

@@ -1,9 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
+}
+
+[x-cloak] {
+  display: none !important;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
   height: 16rem; /* Adjust for smaller screens if needed */
 }
 
-#welcome-section {
+#Welcome {
   position: relative;
   display: flex;
   flex-direction: column;

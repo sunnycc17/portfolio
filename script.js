@@ -241,3 +241,14 @@ AOS.init({
   mirror: false, // Should elements animate when scrolling back up?
   anchorPlacement: 'top-bottom', // Where animation triggers
 });
+
+// eslint-disable-next-line no-unused-vars, no-undef
+var typed = new Typed('#element', {
+  strings: ['A Front-End Developer.'],
+  typeSpeed: 100,
+  loop: true,
+  loopCount: Infinity,
+  fadeOut: false,
+  startDelay: 1000,
+  showCursor: false,
+});
