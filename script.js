@@ -3,7 +3,7 @@
 // script.js (in the root folder)
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
-import { skills } from './data/SkillsData.js';
+
 
 /**
  * Selects the social media container and appends social media links as anchor elements with icons.
@@ -88,149 +88,7 @@ projects.forEach((project) => {
   container.appendChild(anchor);
 });
 
-/**
- * Renders skills in the skills grid with pagination support (next/previous).
- */
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('skills-grid');
-  let touchStartX = 0;
-  let touchEndX = 0;
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
-  const dotsContainer = document.getElementById('pagination-dots');
 
-  let currentIndex = 0;
-  const itemsPerPage = 9; // Show 6 skills at a time
-  const totalPages = Math.ceil(skills.length / itemsPerPage);
-
-  //detect touch start position
-  grid.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  //detect touch end positiion and determine swipe direction
-  grid.addEventListener('touchend', (e) => {
-    touchEndX = e.touches[0].clientX;
-    handleSwipe();
-  });
-
-  function handleSwipe() {
-    const swipeThreshold = 50; // minimum swipe detection distance
-
-    if (touchStartX - touchEndX > swipeThreshold) {
-      updateCarousel('next');
-    } else if (touchEndX - touchStartX > swipeThreshold) {
-      updateCarousel('prev');
-    }
-  }
-
-  /**
-   * Renders a set of skills based on the current index and items per page.
-   * @param {number} index - The index to start rendering skills from.
-   */
-  function renderSkills(index) {
-    grid.innerHTML = ''; // Clear current skills
-    const visibleSkills = skills.slice(index, index + itemsPerPage);
-
-    visibleSkills.forEach((skill) => {
-      /**
-       * Creates and appends a skill element with its icon, name, and rating.
-       * @param {Object} skill - The skill object containing src, alt, name, and stars.
-       * @param {string} skill.src - The source URL of the skill icon.
-       * @param {string} skill.alt - The alt text for the skill icon.
-       * @param {string} skill.name - The name of the skill.
-       * @param {number} skill.stars - The rating stars for the skill.
-       */
-      const wrapper = document.createElement('div');
-      wrapper.className =
-        'relative flex flex-col items-center p-1 border border-gray-200 rounded-lg hover:bg-violet-900 transition-colors duration-300 ease-in-out w-20 h-20 aspect-square';
-
-      // Skill Image
-      const img = document.createElement('img');
-      img.src = skill.src;
-      img.alt = skill.alt;
-      img.className = ' w-10 h-10 object-contain aspect-square'; // Adjust icon size herea
-
-      // Skill Name
-      const name = document.createElement('p');
-      name.textContent = skill.name;
-      name.className =
-        'text-xs font-semibold text-white text-center text-wrap break-words max-w-[80px] w-15 leading-tight';
-
-      // Star Ratings
-      const stars = document.createElement('div');
-      stars.className = 'text-sm text-purple-200';
-      stars.innerHTML = '★'.repeat(skill.stars) + '☆'.repeat(5 - skill.stars); // Fill stars logic
-
-      wrapper.appendChild(img);
-      wrapper.appendChild(name);
-      wrapper.appendChild(stars);
-      grid.appendChild(wrapper);
-    });
-
-    updatePaginationDots(index / itemsPerPage);
-  }
-
-  /**
-   * Updates the current skill set based on the carousel direction (next or previous).
-   * @param {string} direction - The direction to update the carousel ('next' or 'prev').
-   */
-  function updateCarousel(direction) {
-    const maxIndex = skills.length - itemsPerPage;
-    if (direction === 'next') {
-      currentIndex =
-        currentIndex + itemsPerPage > maxIndex
-          ? 0
-          : currentIndex + itemsPerPage;
-    } else {
-      currentIndex =
-        currentIndex - itemsPerPage < 0
-          ? maxIndex
-          : currentIndex - itemsPerPage;
-    }
-    renderSkills(currentIndex);
-  }
-
-  function updatePaginationDots(activeIndex) {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalPages; i++) {
-      const dot = document.createElement('div');
-      dot.className = `h-2 w-2 rounded-full cursor-pointer ${
-        i === activeIndex ? 'bg-purple-400' : 'bg-gray-500'
-      } transition duration-300`;
-
-      dot.addEventListener('click', () => {
-        currentIndex = i * itemsPerPage;
-        renderSkills(currentIndex);
-      });
-
-      dotsContainer.appendChild(dot);
-    }
-  }
-
-  // Initial render
-  renderSkills(currentIndex);
-
-  /**
-   * Adds click event listeners for the carousel buttons (next and prev).
-   */
-  nextBtn.addEventListener('click', () => {
-    updateCarousel('next');
-    nextBtn.classList.add('bg-sky-400');
-
-    setTimeout(() => {
-      nextBtn.classList.remove('bg-sky-400');
-    }, 300);
-  });
-  prevBtn.addEventListener('click', () => {
-    updateCarousel('prev');
-    prevBtn.classList.add('bg-sky-400');
-
-    setTimeout(() => {
-      prevBtn.classList.remove('bg-sky-400');
-    }, 300);
-  });
-});
 
 AOS.init({
   debug: true, // Show AOS debug logs in the console
@@ -245,7 +103,7 @@ AOS.init({
 // eslint-disable-next-line no-unused-vars, no-undef
 var typed = new Typed('#element', {
   strings: ['A Front-End Developer.'],
-  typeSpeed: 100,
+  typeSpeed: 50,
   loop: true,
   loopCount: Infinity,
   fadeOut: false,
