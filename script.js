@@ -4,7 +4,6 @@
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
 
-
 /**
  * Selects the social media container and appends social media links as anchor elements with icons.
  */
@@ -61,8 +60,7 @@ projects.forEach((project) => {
 
   // Create inner div
   const div = document.createElement('div');
-  div.className =
-    'w-64 h-64 p-4 rounded-lg border border-gray-300 shadow-lg shadow-black  flex items-center justify-center'; // Fixed width and height for a square shape
+  div.className = 'w-64 h-64  rounded-lg  flex items-center justify-center'; // Fixed width and height for a square shape
 
   // Create img element
   const img = document.createElement('img');
@@ -87,8 +85,6 @@ projects.forEach((project) => {
   // Append anchor to container
   container.appendChild(anchor);
 });
-
-
 
 AOS.init({
   debug: true, // Show AOS debug logs in the console
