@@ -26,7 +26,7 @@ export const socialMediaLinks = [
     title: 'Email',
   },
   {
-    href: '',
+    href: 'src/cv.html',
     iconClass: 'ri-file-text-line',
     target: '_blank',
     title: 'Resume',
