@@ -60,14 +60,14 @@ projects.forEach((project) => {
 
   // Create inner div
   const div = document.createElement('div');
-  div.className = 'w-64 h-64  rounded-lg  flex items-center justify-center'; // Fixed width and height for a square shape
+  div.className =
+    'w-64 h-52 border rounded-lg  flex flex-col items-center justify-center hover:scale-105 transition-transform duration-500'; // Fixed width and height for a square shape
 
   // Create img element
   const img = document.createElement('img');
   img.setAttribute('src', project.imgSrc);
   img.setAttribute('alt', project.alt);
-  img.className =
-    'w-full h-full object-cover rounded-lg transition-transform duration-500 hover:scale-105'; // Ensure the image fits the container
+  img.className = 'w-full h-full object-cover rounded-t-lg'; // Ensure the image fits the container
 
   // Append img to div
   div.appendChild(img);
@@ -76,16 +76,17 @@ projects.forEach((project) => {
   const title = document.createElement('p');
   title.textContent = project.title;
   title.className =
-    'font-light text-center mt-2 hover:text-gray-300 transition-transform duration-500';
+    'font-light text-center p-2 hover:text-gray-300 transition-transform duration-500';
 
   // Append div and title to anchor
   anchor.appendChild(div);
-  anchor.appendChild(title);
+  div.appendChild(title);
 
   // Append anchor to container
   container.appendChild(anchor);
 });
 
+//  ANIMATE ON SCROLL SETTINGS
 AOS.init({
   debug: true, // Show AOS debug logs in the console
   duration: 1000, // Animation duration (ms)
@@ -96,6 +97,7 @@ AOS.init({
   anchorPlacement: 'top-bottom', // Where animation triggers
 });
 
+//HERO SECTION TYPED SETTINGS
 // eslint-disable-next-line no-unused-vars, no-undef
 var typed = new Typed('#element', {
   strings: ['A Front-End Developer.'],
