@@ -102,7 +102,7 @@ AOS.init({
 var typed = new Typed('#element', {
   strings: ['A Front-End Developer.'],
   typeSpeed: 50,
-  loop: true,
+  loop: false,
   loopCount: Infinity,
   fadeOut: false,
   startDelay: 1000,

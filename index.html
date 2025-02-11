@@ -3,7 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Basic SEO Meta Tags -->
+    <meta
+      name="description"
+      content="A driven front-end developer creating functional and visually stunning web experiences. Passionate about coding, design, and continuous growth."
+    />
+    <meta
+      name="keywords"
+      content="front-end developer, web development, HTML, CSS, JavaScript, React, Tailwind CSS, portfolio, freelance developer, web design"
+    />
+    <meta name="author" content="Krista" />
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta
+      property="og:title"
+      content="Krista | Front-End Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="A passionate front-end developer with expertise in modern web technologies, crafting stunning and responsive web experiences."
+    />
+    <meta
+      property="og:image"
+      content="https://sunnycc17.github.io/portfolio/public/preview-image.png"
+    />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Krista | Front-End Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="A creative front-end developer skilled in HTML, CSS, JavaScript, React, and Tailwind CSS."
+    />
+
+    <!-- make twitter account and adjust the tags -->
+    <meta
+      name="twitter:image"
+      content="https://sunnycc17.github.io/portfolio/public/preview-image.png"
+    />
+    <meta name="twitter:site" content="@yourtwitterhandle" />
+
+    <!-- Canonical URL (Prevents duplicate content issues) -->
+    <link rel="canonical" href="https://sunnycc17.github.io/portfolio/" />
+
+    <!-- tailwind link -->
     <link rel="stylesheet" href="src/output.css" />
+
     <!-- AOS CSS -->
     <link
       rel="stylesheet"
@@ -17,7 +67,10 @@
     <title>Portfolio</title>
   </head>
   <body>
-    <header class="relative z-20 bg-purple-500" x-data="{ open: false }">
+    <header
+      class="fixed top-0 z-20 w-full bg-purple-500"
+      x-data="{ open: false }"
+    >
       <nav
         class="mx-auto flex max-w-7xl items-center justify-center p-4 lg:px-6"
         aria-label="Global"
