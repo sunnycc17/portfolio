@@ -202,6 +202,7 @@
       </div>
     </header>
 
+    <!-- Welcome Section -->
     <section
       id="Welcome"
       class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
@@ -217,6 +218,7 @@
       <span id="element" class="inline-block h-6 p-2 align-top"></span>
     </section>
 
+    <!-- About Section -->
     <section
       id="About"
       class="my-20 flex flex-col items-center justify-center gap-5 px-10 text-center"
@@ -252,7 +254,7 @@
       </div>
     </section>
 
-    <!-- SKILLBOX -->
+    <!-- Skills Section -->
     <section
       id="Skills"
       class="m-5 flex flex-col items-center justify-center p-5"
@@ -342,6 +344,7 @@
       </div>
     </section>
 
+    <!-- Project Section -->
     <section
       data-aos="fade-up"
       data-aos-delay="500"
@@ -365,6 +368,34 @@
         Show All <i class="ri-arrow-right-s-line"></i>
       </a>
     </section>
+
+    <dialog id="projectModal" class="modal modal-middle">
+      <div
+        class="modal-box h-auto max-h-[80vh] w-[90vw] max-w-3xl text-wrap rounded-xl bg-gradient-to-br from-gray-900 to-purple-900 p-8 text-center text-white shadow-lg"
+      >
+        <h3 id="modalTitle" class="text-3xl font-extralight"></h3>
+        <img id="modalImg" class="my-3 h-60 w-full rounded-lg object-cover" />
+        <p id="modalDesc" class="py-2 text-lg"></p>
+        <div class="modal-action mt-2 flex flex-row justify-center gap-8">
+          <a
+            id="modalLink"
+            target="_blank"
+            class="rounded-lg border border-white/50 bg-white/30 px-6 py-3 text-black shadow-md backdrop-blur-lg transition duration-300 hover:scale-105 hover:shadow-red-400/50"
+          >
+            View Live
+          </a>
+          <form method="dialog">
+            <button
+              class="rounded-lg border border-black px-6 py-3 text-black shadow-md transition duration-300 hover:bg-black hover:text-white"
+            >
+              back
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Contact Section -->
     <section
       id="Contact"
       class="m-5 my-20 flex flex-col items-center justify-center gap-5 text-wrap p-5 text-center xl:text-3xl"
@@ -388,11 +419,13 @@
         So Call Me <em class="text-gradient">Maybe..?</em>
       </p>
     </section>
+
+    <!-- Footer -->
     <footer
       title="Thanks for visiting!c:"
       class="flex items-center justify-center bg-purple-400 p-1.5 text-black"
     >
-      @<span id="year" class="mr-1"></span>sunnycc17_
+      @<span id="year" class="mr-1"></span>sunnycc17_. All rights reserved.
     </footer>
   </body>
 
@@ -408,5 +441,4 @@
   <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script type="module" src="./script.js"></script>
-  <!-- Include the JS module -->
 </html>

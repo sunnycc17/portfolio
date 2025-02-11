@@ -42,49 +42,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 /**
  * Selects the projects container and appends project tiles as anchor elements.
  */
-const container = document.querySelector('.projects'); // Select the projects container
-
-projects.forEach((project) => {
-  /**
-   * Creates and appends a project tile for each project.
-   * @param {Object} project - The project object containing the href, imgSrc, alt and title.
-   * @param {string} project.href - The URL to the project's page.
-   * @param {string} project.imgSrc - The source URL of the project image.
-   * @param {string} project.alt - The alt text for the project image.
-   * @param {string} project.title - The title of the project.
-   */
-  const anchor = document.createElement('a');
-  anchor.setAttribute('href', project.href);
-  anchor.setAttribute('target', '_blank');
-  anchor.className = 'project-tile block hover:cursor-pointer';
-
-  // Create inner div
-  const div = document.createElement('div');
-  div.className =
-    'w-64 h-52 border rounded-lg  flex flex-col items-center justify-center hover:scale-105 transition-transform duration-500'; // Fixed width and height for a square shape
-
-  // Create img element
-  const img = document.createElement('img');
-  img.setAttribute('src', project.imgSrc);
-  img.setAttribute('alt', project.alt);
-  img.className = 'w-full h-full object-cover rounded-t-lg'; // Ensure the image fits the container
-
-  // Append img to div
-  div.appendChild(img);
-
-  // Create title paragraph
-  const title = document.createElement('p');
-  title.textContent = project.title;
-  title.className =
-    'font-light text-center p-2 hover:text-gray-300 transition-transform duration-500';
-
-  // Append div and title to anchor
-  anchor.appendChild(div);
-  div.appendChild(title);
-
-  // Append anchor to container
-  container.appendChild(anchor);
-});
 
 //  ANIMATE ON SCROLL SETTINGS
 AOS.init({
@@ -107,4 +64,35 @@ var typed = new Typed('#element', {
   fadeOut: false,
   startDelay: 1000,
   showCursor: false,
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.projects');
+  const modal = document.getElementById('projectModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalLink = document.getElementById('modalLink');
+
+  projects.forEach((project) => {
+    const anchor = document.createElement('a');
+    anchor.className =
+      'block w-64 h-52 border border-purple-500 rounded-lg shadow-md overflow-hidden transform transition-transform duration-500 hover:scale-105 cursor-pointer';
+    anchor.addEventListener('click', () => {
+      modalImg.src = project.imgSrc;
+      modalImg.alt = project.alt;
+      modalTitle.textContent = project.title;
+      modalDesc.textContent = project.tooltip;
+      modalLink.href = project.href;
+      modal.showModal();
+    });
+
+    const img = document.createElement('img');
+    img.src = project.imgSrc;
+    img.alt = project.alt;
+    img.className = 'w-full h-full object-cover';
+
+    anchor.appendChild(img);
+    container.appendChild(anchor);
+  });
 });
