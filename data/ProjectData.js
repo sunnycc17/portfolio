@@ -1,11 +1,17 @@
-// data.js (inside the 'data' folder)
 export const projects = [
   {
     href: 'https://sunnycc17.github.io/arne-drinovec-coaching/',
     imgSrc: './public/project-arne.png',
-    alt: 'an eco company landing page',
-    title: 'Personal Trainer Webpage',
-    tooltip: 'Made with html,tailwind,minimal js & libraries',
+    alt: 'Personal Trainer Website',
+    title: 'A personal trainer landing page.',
+    tooltip: `
+    Tech Stack Used:
+    - HTML5, Tailwind CSS
+    - JavaScript & Alpine.js
+    - Swiper.js (carousel)
+    - AOS (scroll animations)
+    - Remix Icon
+    - Open Graph & Twitter Meta Tags`,
   },
   {
     href: 'https://sunnycc17.github.io/Quote/',
