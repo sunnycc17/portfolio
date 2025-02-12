@@ -4,21 +4,16 @@ export const projects = [
     imgSrc: './public/project-arne.png',
     alt: 'Personal Trainer Website',
     title: 'A personal trainer landing page.',
-    tooltip: `
-    Tech Stack Used:
-    - HTML5, Tailwind CSS
-    - JavaScript & Alpine.js
-    - Swiper.js (carousel)
-    - AOS (scroll animations)
-    - Remix Icon
-    - Open Graph & Twitter Meta Tags`,
+    tooltip:
+      'Tech Stack Used: HTML5 / Tailwind CSS / JavaScript / Alpine.js / Swiper.js / AOS / Remix Icon / Open Graph & Twitter Meta Tags',
   },
   {
     href: 'https://sunnycc17.github.io/Quote/',
     imgSrc: './public/quote.png',
     alt: 'Quote page',
     title: 'Positivity Quote Page',
-    tooltip: 'my first react ts project',
+    tooltip:
+      'Tech Stack Used: React / Vite / TypeScript / Tailwind CSS / Bootstrap / React Hooks (useState, useEffect)',
   },
   {
     href: 'https://github.com/sunnycc17/project2',
@@ -46,6 +41,7 @@ export const projects = [
     imgSrc: './public/project-adelina.png',
     alt: 'A Webpage for a singer',
     title: 'A webpage for a singer',
-    tooltip: 'Html/tailwind/js',
+    tooltip:
+      'Tech Stack Used: HTML5 / Tailwind CSS / JavaScript / AOS / Remix Icons / YouTube Embeds / SEO Meta Tags',
   },
 ];
