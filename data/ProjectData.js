@@ -1,14 +1,14 @@
 // data.js (inside the 'data' folder)
 export const projects = [
   {
-    href: 'https://github.com/sunnycc17/sagegreen',
-    imgSrc: './public/sagegreen.png',
+    href: 'https://sunnycc17.github.io/arne-drinovec-coaching/',
+    imgSrc: './public/project-arne.png',
     alt: 'an eco company landing page',
-    title: 'Eco Company (WIP)',
-    tooltip: 'a react ts project',
+    title: 'Personal Trainer Webpage',
+    tooltip: 'Made with html,tailwind,minimal js & libraries',
   },
   {
-    href: 'https://github.com/sunnycc17/sagegreen',
+    href: 'https://sunnycc17.github.io/Quote/',
     imgSrc: './public/quote.png',
     alt: 'Quote page',
     title: 'Positivity Quote Page',
@@ -36,10 +36,10 @@ export const projects = [
     tooltip: 'more js practice',
   },
   {
-    href: 'https://github.com/sunnycc17/project5',
-    imgSrc: './public/landing.png',
-    alt: 'fifth project landing page',
-    title: 'Landing Page',
-    tooltip: 'no frameworks used',
+    href: 'https://sunnycc17.github.io/Adelina-vogli/',
+    imgSrc: './public/project-adelina.png',
+    alt: 'A Webpage for a singer',
+    title: 'A webpage for a singer',
+    tooltip: 'Html/tailwind/js',
   },
 ];
