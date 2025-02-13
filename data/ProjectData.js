@@ -20,21 +20,22 @@ export const projects = [
     imgSrc: './public/coin.png',
     alt: 'coin flip game',
     title: 'Coin Flip',
-    tooltip: 'simple js project',
+    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript',
   },
   {
     href: 'https://github.com/sunnycc17/project3',
     imgSrc: './public/calculator.png',
     alt: 'a purple calculator',
     title: 'Calculator',
-    tooltip: 'another js practice project',
+    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript',
   },
   {
-    href: 'https://github.com/sunnycc17/project4',
-    imgSrc: './public/roman.png',
+    href: 'https://sunnycc17.github.io/01-usa-number-validator/',
+    imgSrc: './public/project-usa.png',
     alt: 'fourth project roman numeral converter',
-    title: 'Roman Numeral Converter',
-    tooltip: 'more js practice',
+    title: 'USA Phone Number Validator',
+    tooltip: `Tech Stack Used:
+HTML / Tailwind CSS / JavaScript / AOS (Animate On Scroll) / Typed.js`,
   },
   {
     href: 'https://sunnycc17.github.io/Adelina-vogli/',

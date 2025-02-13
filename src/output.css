@@ -1112,13 +1112,6 @@
       }
     }
   }
-  .hover\:bg-slate-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-slate-300);
-      }
-    }
-  }
   .hover\:bg-violet-900 {
     &:hover {
       @media (hover: hover) {
