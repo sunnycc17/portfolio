@@ -4,22 +4,20 @@
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
 
-/**
- * Selects the social media container and appends social media links as anchor elements with icons.
- */
 const socialMediasContainer = document.querySelector('.social-medias'); // Select the container
 
 socialMediaLinks.forEach((link) => {
-  /**
-   * Creates and appends an anchor element for each social media link.
-   * @param {Object} link - The social media link object containing the href, target, title, and iconClass.
-   * @param {string} link.href - The URL of the social media link.
-   * @param {string} link.target - The target attribute for the anchor.
-   * @param {string} link.title - The title attribute for the anchor.
-   * @param {string} link.iconClass - The class name for the icon to be displayed.
-   */
   const anchor = document.createElement('a');
-  anchor.setAttribute('href', link.href);
+
+  // Decode HTML entities if it's an email
+  let hrefValue = link.href;
+  if (hrefValue.startsWith('&#')) {
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = hrefValue;
+    hrefValue = `mailto:${tempElement.textContent || tempElement.innerText}`;
+  }
+
+  anchor.setAttribute('href', hrefValue);
   anchor.setAttribute('target', link.target);
   anchor.setAttribute('title', link.title);
 
