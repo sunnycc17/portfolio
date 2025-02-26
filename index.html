@@ -72,7 +72,7 @@
       x-data="{ open: false }"
     >
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-center p-4 lg:px-6"
+        class="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-6"
         aria-label="Global"
       >
         <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
@@ -135,7 +135,7 @@
           x-cloak
           @click.away="open = false"
         >
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-end">
             <button
               type="button"
               class="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -384,11 +384,11 @@
 
     <dialog id="projectModal" class="modal modal-middle">
       <div
-        class="modal-box h-auto max-h-[80vh] w-[90vw] max-w-3xl text-wrap rounded-xl bg-gradient-to-br from-gray-900 to-purple-900 p-8 text-center text-white shadow-lg"
+        class="modal-box flex h-auto max-h-[80vh] w-[90vw] max-w-3xl flex-col items-center justify-center gap-2 text-wrap rounded-xl bg-gradient-to-br from-gray-900 to-purple-900 p-8 text-center text-white shadow-lg"
       >
         <h3 id="modalTitle" class="text-3xl font-extralight"></h3>
-        <img id="modalImg" class="my-3 h-60 w-full rounded-lg object-cover" />
-        <p id="modalDesc" class="py-2 text-lg"></p>
+        <img id="modalImg" class="my-3 h-60 max-w-xl rounded-lg object-cover" />
+        <p id="modalDesc" class="max-w-3xl text-wrap py-2 text-lg"></p>
         <div class="modal-action mt-2 flex flex-row justify-center gap-8">
           <a
             id="modalLink"

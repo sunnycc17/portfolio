@@ -23,11 +23,11 @@ export const projects = [
     tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript',
   },
   {
-    href: 'https://github.com/sunnycc17/project3',
-    imgSrc: './public/calculator.png',
-    alt: 'a purple calculator',
-    title: 'Calculator',
-    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript',
+    href: 'https://sunnycc17.github.io/the-hair-lab/',
+    imgSrc: './public/the-hair-lab.png',
+    alt: 'A Hair Salon Website',
+    title: 'A Hair Salon Website',
+    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript / Alpine / Lightbox2',
   },
   {
     href: 'https://sunnycc17.github.io/01-usa-number-validator/',
