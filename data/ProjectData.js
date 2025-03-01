@@ -16,11 +16,11 @@ export const projects = [
       'Tech Stack Used: React / Vite / TypeScript / Tailwind CSS / Bootstrap / React Hooks (useState, useEffect)',
   },
   {
-    href: 'https://github.com/sunnycc17/project2',
-    imgSrc: './public/coin.png',
-    alt: 'coin flip game',
-    title: 'Coin Flip',
-    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript',
+    href: 'https://sunnycc17.github.io/palindrome-app/',
+    imgSrc: './public/palindrome-project.png',
+    alt: 'A Palindrome Checker',
+    title: 'A Palindrome Checker',
+    tooltip: 'Tech Stack Used: HTML5 / CSS / React / TypeScript / AOS',
   },
   {
     href: 'https://sunnycc17.github.io/the-hair-lab/',
