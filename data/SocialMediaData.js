@@ -2,7 +2,7 @@
 
 export const socialMediaLinks = [
   {
-    href: 'https://www.linkedin.com/in/christina-vogli-9227042a6/',
+    href: 'https://www.linkedin.com/in/kristina-vogli-9227042a6/',
     iconClass: 'ri-linkedin-line',
     target: '_blank',
     title: 'Linkedin',
