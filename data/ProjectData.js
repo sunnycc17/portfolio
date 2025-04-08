@@ -38,10 +38,10 @@ export const projects = [
 HTML / Tailwind CSS / JavaScript / AOS (Animate On Scroll) / Typed.js`,
   },
   {
-    href: 'https://sunnycc17.github.io/Adelina-vogli/',
-    imgSrc: './public/project-adelina.png',
-    alt: 'A Webpage for a singer',
-    title: 'A webpage for a singer',
+    href: 'https://sunnycc17.github.io/andrew-shaw-tutoring/',
+    imgSrc: './public/andrew-project.webp',
+    alt: 'A Website for the music instructor Andrew Shaw',
+    title: 'A Website for the music instructor Andrew Shaw',
     tooltip:
       'Tech Stack Used: HTML5 / Tailwind CSS / JavaScript / AOS / Remix Icons / YouTube Embeds / SEO Meta Tags',
   },
