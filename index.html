@@ -72,7 +72,7 @@
   </head>
   <body>
     <header
-      class="fixed top-0 z-20 w-full bg-purple-500"
+      class="fixed top-0 z-20 w-full bg-black/60"
       x-data="{ open: false }"
     >
       <nav
@@ -82,7 +82,7 @@
         <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
           <button
             type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             @click="open = true"
           >
             <span class="sr-only">Open main menu</span>
@@ -102,39 +102,61 @@
             </svg>
           </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-6">
+        <div
+          class="rounded-2xlshadow-lg hidden backdrop-blur-lg lg:flex lg:gap-x-4"
+        >
           <a
             href="#Welcome"
-            class="rounded-xl px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-purple-700 hover:text-white hover:shadow-md"
-            >Welcome</a
+            class="group relative rounded-xl px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
           >
+            <span class="relative z-10">Welcome</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
           <a
             href="#About"
-            class="rounded-xl px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-purple-700 hover:text-white hover:shadow-md"
-            >About</a
+            class="group relative rounded-xl px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
           >
+            <span class="relative z-10">About</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
           <a
             href="#Skills"
-            class="rounded-xl px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-purple-700 hover:text-white hover:shadow-md"
-            >Skills</a
+            class="group relative rounded-xl px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
           >
+            <span class="relative z-10">Skills</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
           <a
             href="#Projects"
-            class="rounded-xl px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-purple-700 hover:text-white hover:shadow-md"
-            >Projects</a
+            class="group relative rounded-xl px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
           >
+            <span class="relative z-10">Projects</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
           <a
             href="#Contact"
-            class="rounded-xl px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition duration-300 hover:bg-purple-700 hover:text-white hover:shadow-md"
-            >Contact</a
+            class="group relative rounded-xl px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
           >
+            <span class="relative z-10">Contact</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
         </div>
       </nav>
       <!-- Mobile menu, show/hide based on menu open state. -->
       <div class="lg:hidden" role="dialog" aria-modal="true">
         <!-- Sidebar, shown only when open is true -->
         <div
-          class="fixed inset-y-0 right-0 z-10 w-64 overflow-y-auto rounded-l-2xl border-l border-white/20 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
+          class="fixed inset-y-0 right-0 z-10 w-64 overflow-y-auto rounded-l-2xl border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
           x-show="open"
           x-cloak
           @click.away="open = false"
@@ -173,7 +195,7 @@
               >
                 <a
                   :href="`#${item}`"
-                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-white/20"
+                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
                   @click="open = false"
                   x-text="item"
                 ></a>
