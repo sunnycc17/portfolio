@@ -75,8 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
   projects.forEach((project) => {
     const anchor = document.createElement('a');
     anchor.className =
-      'block w-64 h-52 border border-purple-500 rounded-lg shadow-md overflow-hidden transform transition-transform duration-500 hover:scale-105 cursor-pointer';
-    anchor.addEventListener('click', () => {
+    // 'block w-64 h-52 bg-white/5 rounded-xl'
+
+'block w-64 h-52 bg-[#1e1e26] border border-slate-500/30 rounded-md text-white/80 transition duration-300 hover:border-white/50 hover:scale-105'
+
+      anchor.addEventListener('click', () => {
       modalImg.src = project.imgSrc;
       modalImg.alt = project.alt;
       modalTitle.textContent = project.title;
