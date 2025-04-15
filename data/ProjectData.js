@@ -3,46 +3,48 @@ export const projects = [
     href: 'https://sunnycc17.github.io/arne-drinovec-coaching/',
     imgSrc: './public/project-arne.png',
     alt: 'Personal Trainer Website',
-    title: 'A personal trainer landing page.',
+    title: 'Fitness Coach Landing Page',
     tooltip:
-      'Tech Stack Used: HTML5 / Tailwind CSS / JavaScript / Alpine.js / Swiper.js / AOS / Remix Icon / Open Graph & Twitter Meta Tags',
+      'Built with HTML, Tailwind CSS, Alpine.js, Swiper.js, and AOS. Features animations, carousel, and social meta tags.',
   },
   {
     href: 'https://sunnycc17.github.io/Quote/',
     imgSrc: './public/quote.png',
     alt: 'Quote page',
-    title: 'Positivity Quote Page',
+    title: 'Motivational Quotes App',
     tooltip:
-      'Tech Stack Used: React / Vite / TypeScript / Tailwind CSS / Bootstrap / React Hooks (useState, useEffect)',
+      'Made with React, Vite, TypeScript, and Tailwind. Includes Bootstrap styling and custom React Hooks.',
   },
   {
     href: 'https://sunnycc17.github.io/palindrome-app/',
     imgSrc: './public/palindrome-project.png',
     alt: 'A Palindrome Checker',
-    title: 'A Palindrome Checker',
-    tooltip: 'Tech Stack Used: HTML5 / CSS / React / TypeScript / AOS',
+    title: 'Palindrome Checker',
+    tooltip:
+      'React + TypeScript tool with AOS animations. Simple UI for testing palindromes in real-time.',
   },
   {
     href: 'https://sunnycc17.github.io/the-hair-lab/',
     imgSrc: './public/the-hair-lab.png',
     alt: 'A Hair Salon Website',
-    title: 'A Hair Salon Website',
-    tooltip: 'Tech Stack Used: HTML5 / CSS / JavaScript / Alpine / Lightbox2',
+    title: 'Hair Salon Website',
+    tooltip:
+      'Static salon landing page using HTML, CSS, JavaScript, Alpine.js, and Lightbox2 for image previews.',
   },
   {
     href: 'https://sunnycc17.github.io/01-usa-number-validator/',
     imgSrc: './public/project-usa.png',
-    alt: 'fourth project roman numeral converter',
-    title: 'USA Phone Number Validator',
-    tooltip: `Tech Stack Used:
-HTML / Tailwind CSS / JavaScript / AOS (Animate On Scroll) / Typed.js`,
+    alt: 'USA Phone Number Validator',
+    title: 'Phone Validator App',
+    tooltip:
+      'Vanilla JS app with Tailwind UI. Includes Typed.js and AOS for scroll animations and typing effects.',
   },
   {
     href: 'https://sunnycc17.github.io/andrew-shaw-tutoring/',
     imgSrc: './public/andrew-project.webp',
-    alt: 'A Website for the music instructor Andrew Shaw',
-    title: 'A Website for the music instructor Andrew Shaw',
+    alt: 'Music Tutor Website',
+    title: 'Music Tutor Website',
     tooltip:
-      'Tech Stack Used: HTML5 / Tailwind CSS / JavaScript / AOS / Remix Icons / YouTube Embeds / SEO Meta Tags',
+      'Responsive site with HTML, Tailwind, and JavaScript. Includes SEO tags, embedded videos, and Remix Icons.',
   },
 ];

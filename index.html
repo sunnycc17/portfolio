@@ -505,32 +505,42 @@
 
       <dialog id="projectModal" class="modal modal-middle">
         <div
-          class="modal-box flex h-auto max-h-[80vh] w-[90vw] max-w-3xl flex-col items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-gray-900 to-purple-900 p-8 text-center text-wrap text-white shadow-lg"
+          class="modal-box flex h-auto max-h-[80vh] w-[90vw] max-w-2xl flex-col items-center justify-center gap-4 rounded-2xl bg-black/60 p-10 text-center text-white shadow-2xl ring-1 ring-white/10 backdrop-blur-lg transition-all duration-300"
         >
-          <h3 id="modalTitle" class="text-3xl font-extralight"></h3>
-          <img
-            id="modalImg"
-            class="my-3 h-60 max-w-xl rounded-lg object-cover"
-          />
-          <p id="modalDesc" class="max-w-3xl py-2 text-lg text-wrap"></p>
-          <div class="modal-action mt-2 flex flex-row justify-center gap-8">
+          <h3
+            id="modalTitle"
+            class="text-4xl font-semibold tracking-wide text-purple-100"
+          >
+            <!-- Dynamic Title Here -->
+          </h3>
+      
+          <p
+            id="modalDesc"
+            class="text-lg leading-relaxed text-purple-200 max-w-2xl"
+          >
+            <!-- Dynamic Description Here -->
+          </p>
+      
+          <div class="modal-action mt-6 flex flex-row flex-wrap justify-center gap-6">
             <a
               id="modalLink"
               target="_blank"
-              class="rounded-lg border border-white/50 bg-white/30 px-6 py-3 text-black shadow-md backdrop-blur-lg transition duration-300 hover:scale-105 hover:shadow-red-400/50"
+              class="rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-white shadow-md backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-purple-600/80 hover:shadow-purple-500/50"
             >
-              View Live
+               View Live
             </a>
             <form method="dialog">
               <button
-                class="rounded-lg border border-black px-6 py-3 text-black shadow-md transition duration-300 hover:bg-black hover:text-white"
+                class="rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md"
               >
-                back
+                ⬅ Back
               </button>
             </form>
           </div>
         </div>
       </dialog>
+      
+      
 
       <!-- Contact Section -->
       <section

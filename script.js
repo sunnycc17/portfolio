@@ -67,7 +67,6 @@ var typed = new Typed('#element', {
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.projects');
   const modal = document.getElementById('projectModal');
-  const modalImg = document.getElementById('modalImg');
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
   const modalLink = document.getElementById('modalLink');
@@ -75,13 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
   projects.forEach((project) => {
     const anchor = document.createElement('a');
     anchor.className =
-    // 'block w-64 h-52 bg-white/5 rounded-xl'
+      'block w-64 h-52 bg-[#1e1e26] border border-slate-500/30 rounded-md text-white/80 transition duration-300 hover:border-white/50 hover:scale-105';
 
-'block w-64 h-52 bg-[#1e1e26] border border-slate-500/30 rounded-md text-white/80 transition duration-300 hover:border-white/50 hover:scale-105'
-
-      anchor.addEventListener('click', () => {
-      modalImg.src = project.imgSrc;
-      modalImg.alt = project.alt;
+    anchor.addEventListener('click', () => {
+      // ✂️ No more modalImg
       modalTitle.textContent = project.title;
       modalDesc.textContent = project.tooltip;
       modalLink.href = project.href;
