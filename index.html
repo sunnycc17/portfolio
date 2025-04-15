@@ -157,7 +157,7 @@
         <div class="lg:hidden" role="dialog" aria-modal="true">
           <!-- Sidebar, shown only when open is true -->
           <div
-            class="fixed inset-y-0 right-0 z-10 w-64 overflow-y-auto rounded-l-2xl border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
+            class="fixed inset-y-0 right-0 z-10 w-64 overflow-y-auto border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
             x-show="open"
             x-cloak
             @click.away="open = false"
@@ -602,8 +602,7 @@
       </section>
 
       <!-- Footer -->
-      <footer
-\        class="group relative flex items-center justify-center bg-purple-500/30 p-4 text-sm font-extralight tracking-tight text-white backdrop-blur-md transition-all duration-500 hover:bg-purple-600/20 hover:text-purple-100 hover:backdrop-blur-lg"
+      <footer  class="group relative flex items-center justify-center bg-purple-500/30 p-4 text-sm font-extralight tracking-tight text-white backdrop-blur-md transition-all duration-500 hover:bg-purple-600/20 hover:text-purple-100 hover:backdrop-blur-lg"
       >
         <span class="z-10">
           @<span id="year" class="mr-1"></span>Sunny | All rights reserved.
