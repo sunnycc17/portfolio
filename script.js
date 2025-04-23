@@ -1,36 +1,38 @@
 /* global AOS */
 
+lucide.createIcons();
+
 // script.js (in the root folder)
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
-import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
+// import { socialMediaLinks } from './data/SocialMediaData.js'; // Import social media data
 
-const socialMediasContainer = document.querySelector('.social-medias'); // Select the container
+// const socialMediasContainer = document.querySelector('.social-medias'); // Select the container
 
-socialMediaLinks.forEach((link) => {
-  const anchor = document.createElement('a');
+// socialMediaLinks.forEach((link) => {
+//   const anchor = document.createElement('a');
 
-  // Decode HTML entities if it's an email
-  let hrefValue = link.href;
-  if (hrefValue.startsWith('&#')) {
-    const tempElement = document.createElement('div');
-    tempElement.innerHTML = hrefValue;
-    hrefValue = `mailto:${tempElement.textContent || tempElement.innerText}`;
-  }
+//   // Decode HTML entities if it's an email
+//   let hrefValue = link.href;
+//   if (hrefValue.startsWith('&#')) {
+//     const tempElement = document.createElement('div');
+//     tempElement.innerHTML = hrefValue;
+//     hrefValue = `mailto:${tempElement.textContent || tempElement.innerText}`;
+//   }
 
-  anchor.setAttribute('href', hrefValue);
-  anchor.setAttribute('target', link.target);
-  anchor.setAttribute('title', link.title);
+//   anchor.setAttribute('href', hrefValue);
+//   anchor.setAttribute('target', link.target);
+//   anchor.setAttribute('title', link.title);
 
-  // Create icon element
-  const icon = document.createElement('i');
-  icon.className = `${link.iconClass} ri-2x hover:text-gray-400 transition ease-in-out duration-300`;
+//   // Create icon element
+//   const icon = document.createElement('i');
+//   icon.className = `${link.iconClass} ri-2x hover:text-gray-400 transition ease-in-out duration-300`;
 
-  // Append icon to anchor
-  anchor.appendChild(icon);
+//   // Append icon to anchor
+//   anchor.appendChild(icon);
 
-  // Append anchor to the container
-  socialMediasContainer.appendChild(anchor);
-});
+//   // Append anchor to the container
+//   socialMediasContainer.appendChild(anchor);
+// });
 
 /**
  * Sets the current year in the footer element.
