@@ -6,6 +6,7 @@ lucide.createIcons();
 import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
 
 
+
 /**
  * Sets the current year in the footer element.
  */
