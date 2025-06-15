@@ -34,10 +34,10 @@ export const projects = [
   {
     href: 'https://sunnycc17.github.io/01-usa-number-validator/',
     imgSrc: './public/project-usa.png',
-    alt: 'USA Phone Number Validator',
-    title: 'Phone Validator App',
+    alt: 'N/A',
+    title: 'Coming Soon',
     tooltip:
-      'Vanilla JS app with Tailwind UI. Includes Typed.js and AOS for scroll animations and typing effects.',
+      'Lorem ipsum',
   },
   {
     href: 'https://sunnycc17.github.io/andrew-shaw-tutoring/',
