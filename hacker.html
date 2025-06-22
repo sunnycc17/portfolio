@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" class="bg-black text-green-400">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacker Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Courier New', monospace;
+      }
+
+      .glow {
+        text-shadow:
+          0 0 5px #00ff00,
+          0 0 10px #00ff00;
+      }
+
+      .terminal-box {
+        box-shadow: 0 0 15px #00ff00;
+      }
+
+      .blinker {
+        animation: blink 1s step-start infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen flex items-center justify-center px-4">
+    <div
+      class="terminal-box w-full max-w-md sm:max-w-2xl p-6 rounded-lg border border-green-400 bg-black"
+    >
+      <h1 class="text-3xl sm:text-4xl glow font-bold mb-4">
+        > Hello, I’m <span class="text-[#00ff00]">Krista</span
+        ><span class="blinker">|</span>
+      </h1>
+
+      <p class="mb-2">💾 Role: Frontend Web Developer</p>
+      <p class="mb-2">🧠 Skills: HTML, Tailwind CSS, JavaScript, Alpine.js</p>
+      <p class="mb-2">🎯 Mission: Crafting fast & dark-coded websites</p>
+      <p class="mb-4">
+        🌐 Website:
+        <a href="#" class="underline hover:text-lime-300">krista.dev</a>
+      </p>
+
+      <div class="border-t border-green-500 mt-6 pt-4">
+        <p class="text-sm text-green-300">[Status: Online]</p>
+        <p class="text-sm text-green-300">[System Secure]</p>
+        <p class="text-sm text-green-300">[No threats detected]</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center p-5">
+      <section class="mt-12 max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold glow mb-6">
+          # Latest Hacks & Logs
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Blog Post -->
+          <article
+            class="border border-green-400 p-4 rounded-lg bg-black/70 hover:bg-black/90 transition-colors"
+          >
+            <h3 class="text-xl font-semibold">
+              💡 How I Hacked My Own Portfolio
+            </h3>
+            <p class="text-sm text-green-300 mt-2">
+              I wanted a vibe. So I added canvas rain, glowy fonts, and
+              terminal-style sections. Here's how...
+            </p>
+            <a
+              href="#"
+              class="inline-block mt-3 text-green-400 underline hover:text-green-200"
+              >Read more</a
+            >
+          </article>
+
+          <!-- Another Post -->
+          <article
+            class="border border-green-400 p-4 rounded-lg bg-black/70 hover:bg-black/90 transition-colors"
+          >
+            <h3 class="text-xl font-semibold">
+              🧪 Experimenting with Tailwind & Terminals
+            </h3>
+            <p class="text-sm text-green-300 mt-2">
+              Mixing terminal UI elements with Tailwind’s power. This blog post
+              is basically a dark spell.
+            </p>
+            <a
+              href="#"
+              class="inline-block mt-3 text-green-400 underline hover:text-green-200"
+              >Read more</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section class="mt-16 max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-bold glow mb-4">$ logs --recent</h2>
+        <ul class="space-y-2">
+          <li>
+            <code class="text-green-300">> open blog/hacking-tailwind</code>
+          </li>
+          <li>
+            <code class="text-green-300"
+              >> run code "ascii-glow-effect.js"</code
+            >
+          </li>
+          <li>
+            <code class="text-green-300">> compile mind --with caffeine</code>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <canvas
+      id="matrix"
+      class="fixed top-0 left-0 w-full h-full -z-10 opacity-20"
+    ></canvas>
+    <script>
+      const canvas = document.getElementById('matrix');
+      const ctx = canvas.getContext('2d');
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      const letters = '01';
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+
+      const drops = Array.from({ length: columns }).fill(1);
+
+      function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00ff00';
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters[Math.floor(Math.random() * letters.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 33);
+    </script>
+  </body>
+</html>
