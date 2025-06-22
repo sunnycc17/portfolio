@@ -218,10 +218,51 @@
         </div>
       </header>
 
+      <!-- Toggle Switch -->
+      <div class="fixed right-3 top-16 z-[9999] sm:right-8 sm:top-28">
+        <label
+          class="relative inline-block w-20 h-10 cursor-pointer select-none"
+        >
+          <input
+            type="checkbox"
+            class="peer absolute w-full h-full opacity-0 cursor-pointer"
+          />
+
+          <!-- Background -->
+          <span
+            class="block w-full h-full rounded-full border border-gray-400 bg-purple-400/0 transition-colors duration-300 peer-checked:bg-black"
+          ></span>
+
+          <!-- The ball -->
+          <span
+            class="absolute top-1.5 left-1.5 w-7 h-7 rounded-full border border-gray-400 bg-white transition-all duration-300 peer-checked:left-[2.75rem] peer-checked:bg-[#00ff00] peer-checked:border-green-500 flex items-center justify-center"
+            id="toggle-ball"
+          >
+            <!-- Icon will go here -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-purple-900 peer-checked:text-green-500 transition-colors duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              id="toggle-icon"
+            >
+              <!-- Default icon: sun (light mode) -->
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636"
+              />
+            </svg>
+          </span>
+        </label>
+      </div>
+
       <!-- Welcome Section -->
       <section
         id="Welcome"
-        class="relative flex h-screen flex-col items-center justify-center overflow-hidden"
+        class="relative flex h-screen flex-col items-center justify-center"
       >
         <h1
           data-aos="zoom-in"
