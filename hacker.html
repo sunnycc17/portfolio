@@ -29,6 +29,54 @@
           opacity: 0;
         }
       }
+
+      .parent {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.div1 {
+  grid-column: span 2 / span 2;
+  grid-row: span 8 / span 8;
+}
+
+.div2 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+}
+
+.div3 {
+  grid-column: span 2 / span 2;
+  grid-row: span 5 / span 5;
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.div4 {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.div5 {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
+  grid-column-start: 5;
+  grid-row-start: 4;
+}
+
+.div6 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 7;
+}
+
     </style>
   </head>
 
@@ -41,9 +89,12 @@
         ><span class="blinker">|</span>
       </h1>
 
-      <p class="mb-2">💾 Role: Frontend Web Developer</p>
-      <p class="mb-2">🧠 Skills: HTML, Tailwind CSS, JavaScript, Alpine.js</p>
-      <p class="mb-2">🎯 Mission: Crafting fast & dark-coded websites</p>
+      <p class="mb-2">Role: Linux Enthusiast & Cybersecurity Learner</p>
+      <p class="mb-2">
+        Skills: Linux-Ubuntu, Command Line Interference (CLI) / Bash, Shell
+        Scripting
+      </p>
+      <p class="mb-2">Mission: Crafting fast & dark-coded websites</p>
       <p class="mb-4">
         🌐 Website:
         <a href="#" class="underline hover:text-lime-300">krista.dev</a>
@@ -55,6 +106,65 @@
         <p class="text-sm text-green-300">[No threats detected]</p>
       </div>
     </div>
+
+<div class="parent text-sm text-green-300 font-mono">
+  <div class="div1 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-lg glow font-bold mb-2">🧠 Hacker Brain</h2>
+    <p>// Currently thinking about:</p>
+    <ul class="list-disc pl-4 mt-2">
+      <li>Bypassing firewalls</li>
+      <li>Buffer overflows & exploits</li>
+      <li>How to automate recon with Python</li>
+    </ul>
+    <p class="mt-4">// Mental state: caffeinated ☕</p>
+  </div>
+
+  <div class="div2 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-base glow font-semibold mb-2">📂 Toolkit</h2>
+    <ul class="list-none pl-0 space-y-1">
+      <li>🛠 nmap</li>
+      <li>🛠 metasploit</li>
+      <li>🛠 burp suite</li>
+      <li>🛠 john the ripper</li>
+    </ul>
+  </div>
+
+  <div class="div3 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-base glow font-semibold mb-2">🔒 Current Mission</h2>
+    <p class="mb-2">// Pen-testing a simulated banking app</p>
+    <p class="mb-2">// Focus: SQL Injection & session hijacking</p>
+    <p>// Using Kali on VM 🔐</p>
+  </div>
+
+  <div class="div4 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-base glow font-semibold mb-2">📈 System Metrics</h2>
+    <p>CPU: 14% 🔧</p>
+    <p>RAM: 2.3GB / 4GB 🧠</p>
+    <p>Temp: 63°C 🌡️</p>
+    <p>Uptime: 1d 4h</p>
+  </div>
+
+  <div class="div5 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-base glow font-semibold mb-2">🗂 File Watch</h2>
+    <ul class="list-disc pl-4">
+      <li>/var/log/auth.log</li>
+      <li>/etc/passwd</li>
+      <li>~/scripts/scan.sh</li>
+    </ul>
+    <p class="mt-2">// Watching for sus activity 👀</p>
+  </div>
+
+  <div class="div6 p-4 border border-green-400 rounded-md bg-black/70">
+    <h2 class="text-base glow font-semibold mb-2">📅 Logs</h2>
+    <ul class="list-none space-y-1">
+      <li>[✔] 06:22 - system update</li>
+      <li>[✔] 07:10 - ran scan on 192.168.1.10</li>
+      <li>[⚠] 07:13 - port 22 open</li>
+      <li>[✔] 08:45 - wrote new script</li>
+    </ul>
+  </div>
+</div>
+
 
     <div class="flex flex-col justify-center items-center p-5">
       <section class="mt-12 max-w-4xl mx-auto px-4">
