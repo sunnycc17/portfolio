@@ -70,39 +70,18 @@
         class="fixed top-0 z-20 w-full bg-black/60"
         x-data="{ open: false }"
       >
-        <!-- Hacker Icon with Tooltip -->
-        <div
-          x-data="{ showTip: false, timeout: null }"
-          class="fixed top-2 left-4 sm:left-auto sm:right-4 sm:top-4 z-50"
-          @click.outside="showTip = false"
-        >
-          <div class="relative group">
-            <!-- Button Icon -->
-            <button
-              @click="
-        showTip = true;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => showTip = false, 3000);
-      "
-              class="w-6 h-6 sm:w-14 sm:h-14 bg-gray-200 rounded-full transition-transform hover:scale-110 focus:outline-none"
-            >
-              <img
-                src="/public/hacker.png"
-                alt="hacker icon"
-                class="w-full h-full rounded-full hover:cursor-pointer"
-              />
-            </button>
-
-            <!-- Tooltip with Sparkles -->
-            <div
-              x-show="showTip || $el.parentElement.matches(':hover')"
-              x-transition
-              class="absolute top-1/2 -translate-y-1/2 text-xs text-green-400 bg-gray-900 rounded px-2 py-1 whitespace-nowrap sparkle left-full ml-2 sm:left-auto sm:right-full sm:mr-2"
-              x-cloak
-            >
-              Psst... try:<br /><code>/hacker.html</code>
-            </div>
-          </div>
+        <!-- Hacker Icon Button -->
+        <div class="fixed top-2 left-4 sm:left-auto sm:right-4 sm:top-4 z-50">
+          <button
+            onclick="window.location.href='/hacker.html'"
+            class="w-6 h-6 sm:w-14 sm:h-14 bg-gray-200 rounded-full transition-transform hover:scale-110 focus:outline-none"
+          >
+            <img
+              src="/public/hacker.png"
+              alt="hacker icon"
+              class="w-full h-full rounded-full hover:cursor-pointer"
+            />
+          </button>
         </div>
 
         <nav

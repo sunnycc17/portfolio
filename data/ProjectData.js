@@ -33,7 +33,7 @@ export const projects = [
   },
   {
     href: 'https://sunnycc17.github.io/01-usa-number-validator/',
-    imgSrc: './public/project-usa.png',
+    imgSrc: '',
     alt: 'N/A',
     title: 'Coming Soon',
     tooltip:
