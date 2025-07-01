@@ -12,12 +12,13 @@
 
       .glow {
         text-shadow:
-          0 0 5px #00ff00,
-          0 0 10px #00ff00;
+          0 0 8px #00ff00,
+          0 0 16px #00ff00;
       }
 
       .terminal-box {
-        box-shadow: 0 0 15px #00ff00;
+        box-shadow: 0 0 20px #00ff00;
+        background-color: rgba(0, 0, 0, 0.85);
       }
 
       .blinker {
@@ -30,220 +31,153 @@
         }
       }
 
-      .parent {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  gap: 8px;
-  margin-top: 2rem;
-}
-
-.div1 {
-  grid-column: span 2 / span 2;
-  grid-row: span 8 / span 8;
-}
-
-.div2 {
-  grid-column: span 2 / span 2;
-  grid-row: span 3 / span 3;
-  grid-column-start: 3;
-}
-
-.div3 {
-  grid-column: span 2 / span 2;
-  grid-row: span 5 / span 5;
-  grid-column-start: 3;
-  grid-row-start: 4;
-}
-
-.div4 {
-  grid-column: span 3 / span 3;
-  grid-row: span 3 / span 3;
-  grid-column-start: 5;
-  grid-row-start: 1;
-}
-
-.div5 {
-  grid-column: span 3 / span 3;
-  grid-row: span 3 / span 3;
-  grid-column-start: 5;
-  grid-row-start: 4;
-}
-
-.div6 {
-  grid-column: span 3 / span 3;
-  grid-row: span 2 / span 2;
-  grid-column-start: 5;
-  grid-row-start: 7;
-}
-
+      .glassy {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
+        border: 1px solid rgba(0, 255, 0, 0.2);
+      }
     </style>
   </head>
 
-  <body class="min-h-screen flex items-center justify-center px-4">
-    <div
-      class="terminal-box w-full max-w-md sm:max-w-2xl p-6 rounded-lg border border-green-400 bg-black"
-    >
-      <h1 class="text-3xl sm:text-4xl glow font-bold mb-4">
-        > Hello, I’m <span class="text-[#00ff00]">Krista</span
-        ><span class="blinker">|</span>
+  <body class="min-h-screen flex flex-col items-center justify-start px-4 py-10 space-y-20">
+    <!-- Terminal Intro -->
+    <div class="terminal-box w-full max-w-xl p-8 rounded-lg">
+      <h1 class="text-3xl sm:text-4xl glow font-bold mb-6">
+        > Hello, I’m <span class="text-[#00ff00]">Krista</span><span class="blinker">|</span>
       </h1>
 
-      <p class="mb-2">Role: Linux Enthusiast & Cybersecurity Learner</p>
-      <p class="mb-2">
-        Skills: Linux-Ubuntu, Command Line Interference (CLI) / Bash, Shell
-        Scripting
-      </p>
-      <p class="mb-2">Mission: Crafting fast & dark-coded websites</p>
-      <p class="mb-4">
+      <p class="mb-3">Role: Linux Enthusiast & Cybersecurity Learner</p>
+      <p class="mb-3">Skills: Linux, Bash, Shell Scripting</p>
+      <p class="mb-6">Mission: Crafting fast & dark-coded websites</p>
+
+      <p class="text-sm text-green-300 mb-2">
         🌐 Website:
         <a href="#" class="underline hover:text-lime-300">krista.dev</a>
       </p>
 
-      <div class="border-t border-green-500 mt-6 pt-4">
-        <p class="text-sm text-green-300">[Status: Online]</p>
-        <p class="text-sm text-green-300">[System Secure]</p>
-        <p class="text-sm text-green-300">[No threats detected]</p>
+      <div class="text-xs text-green-300 mt-6 border-t border-green-500 pt-3 space-y-1">
+        <p>[Status: Online]</p>
+        <p>[System Secure]</p>
+        <p>[No threats detected]</p>
       </div>
     </div>
 
-<div class="parent text-sm text-green-300 font-mono">
-  <div class="div1 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-lg glow font-bold mb-2">🧠 Hacker Brain</h2>
-    <p>// Currently thinking about:</p>
-    <ul class="list-disc pl-4 mt-2">
-      <li>Bypassing firewalls</li>
-      <li>Buffer overflows & exploits</li>
-      <li>How to automate recon with Python</li>
-    </ul>
-    <p class="mt-4">// Mental state: caffeinated ☕</p>
-  </div>
-
-  <div class="div2 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-base glow font-semibold mb-2">📂 Toolkit</h2>
-    <ul class="list-none pl-0 space-y-1">
-      <li>🛠 nmap</li>
-      <li>🛠 metasploit</li>
-      <li>🛠 burp suite</li>
-      <li>🛠 john the ripper</li>
-    </ul>
-  </div>
-
-  <div class="div3 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-base glow font-semibold mb-2">🔒 Current Mission</h2>
-    <p class="mb-2">// Pen-testing a simulated banking app</p>
-    <p class="mb-2">// Focus: SQL Injection & session hijacking</p>
-    <p>// Using Kali on VM 🔐</p>
-  </div>
-
-  <div class="div4 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-base glow font-semibold mb-2">📈 System Metrics</h2>
-    <p>CPU: 14% 🔧</p>
-    <p>RAM: 2.3GB / 4GB 🧠</p>
-    <p>Temp: 63°C 🌡️</p>
-    <p>Uptime: 1d 4h</p>
-  </div>
-
-  <div class="div5 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-base glow font-semibold mb-2">🗂 File Watch</h2>
-    <ul class="list-disc pl-4">
-      <li>/var/log/auth.log</li>
-      <li>/etc/passwd</li>
-      <li>~/scripts/scan.sh</li>
-    </ul>
-    <p class="mt-2">// Watching for sus activity 👀</p>
-  </div>
-
-  <div class="div6 p-4 border border-green-400 rounded-md bg-black/70">
-    <h2 class="text-base glow font-semibold mb-2">📅 Logs</h2>
-    <ul class="list-none space-y-1">
-      <li>[✔] 06:22 - system update</li>
-      <li>[✔] 07:10 - ran scan on 192.168.1.10</li>
-      <li>[⚠] 07:13 - port 22 open</li>
-      <li>[✔] 08:45 - wrote new script</li>
-    </ul>
-  </div>
-</div>
-
-
-    <div class="flex flex-col justify-center items-center p-5">
-      <section class="mt-12 max-w-4xl mx-auto px-4">
-        <h2 class="text-2xl sm:text-3xl font-bold glow mb-6">
-          # Latest Hacks & Logs
-        </h2>
-
-        <div class="space-y-6">
-          <!-- Blog Post -->
-          <article
-            class="border border-green-400 p-4 rounded-lg bg-black/70 hover:bg-black/90 transition-colors"
-          >
-            <h3 class="text-xl font-semibold">
-              💡 How I Hacked My Own Portfolio
-            </h3>
-            <p class="text-sm text-green-300 mt-2">
-              I wanted a vibe. So I added canvas rain, glowy fonts, and
-              terminal-style sections. Here's how...
-            </p>
-            <a
-              href="#"
-              class="inline-block mt-3 text-green-400 underline hover:text-green-200"
-              >Read more</a
-            >
-          </article>
-
-          <!-- Another Post -->
-          <article
-            class="border border-green-400 p-4 rounded-lg bg-black/70 hover:bg-black/90 transition-colors"
-          >
-            <h3 class="text-xl font-semibold">
-              🧪 Experimenting with Tailwind & Terminals
-            </h3>
-            <p class="text-sm text-green-300 mt-2">
-              Mixing terminal UI elements with Tailwind’s power. This blog post
-              is basically a dark spell.
-            </p>
-            <a
-              href="#"
-              class="inline-block mt-3 text-green-400 underline hover:text-green-200"
-              >Read more</a
-            >
-          </article>
-        </div>
-      </section>
-
-      <section class="mt-16 max-w-4xl mx-auto px-4">
-        <h2 class="text-2xl font-bold glow mb-4">$ logs --recent</h2>
-        <ul class="space-y-2">
-          <li>
-            <code class="text-green-300">> open blog/hacking-tailwind</code>
-          </li>
-          <li>
-            <code class="text-green-300"
-              >> run code "ascii-glow-effect.js"</code
-            >
-          </li>
-          <li>
-            <code class="text-green-300">> compile mind --with caffeine</code>
-          </li>
+    <!-- Hacker Sections -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full px-4">
+      <!-- Hacker Brain -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-lg glow font-bold mb-4">🧠 Hacker Brain</h2>
+        <p>// Currently thinking about:</p>
+        <ul class="list-disc pl-4 mt-2 space-y-1">
+          <li>Bypassing firewalls</li>
+          <li>Buffer overflows & exploits</li>
+          <li>Automating recon with Python</li>
         </ul>
-      </section>
+        <p class="mt-6">// Mental state: caffeinated ☕</p>
+      </div>
+
+      <!-- Toolkit -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-base glow font-semibold mb-4">📂 Toolkit</h2>
+        <ul class="space-y-2">
+          <li>🛠 nmap</li>
+          <li>🛠 metasploit</li>
+          <li>🛠 burp suite</li>
+          <li>🛠 john the ripper</li>
+        </ul>
+      </div>
+
+      <!-- Mission -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-base glow font-semibold mb-4">🔒 Current Mission</h2>
+        <p class="mb-3">// Pen-testing a simulated banking app</p>
+        <p class="mb-3">// Focus: SQL Injection & session hijacking</p>
+        <p>// Using Kali on VM 🔐</p>
+      </div>
+
+      <!-- System Metrics -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-base glow font-semibold mb-4">📈 System Metrics</h2>
+        <p>CPU: 14% 🔧</p>
+        <p>RAM: 2.3GB / 4GB 🧠</p>
+        <p>Temp: 63°C 🌡️</p>
+        <p>Uptime: 1d 4h</p>
+      </div>
+
+      <!-- File Watch -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-base glow font-semibold mb-4">🗂 File Watch</h2>
+        <ul class="list-disc pl-4 space-y-1">
+          <li>/var/log/auth.log</li>
+          <li>/etc/passwd</li>
+          <li>~/scripts/scan.sh</li>
+        </ul>
+        <p class="mt-4">// Watching for sus activity 👀</p>
+      </div>
+
+      <!-- Logs -->
+      <div class="glassy p-6 rounded-md">
+        <h2 class="text-base glow font-semibold mb-4">📅 Logs</h2>
+        <ul class="space-y-2 text-sm">
+          <li>[✔] 06:22 - system update</li>
+          <li>[✔] 07:10 - ran scan on 192.168.1.10</li>
+          <li>[⚠] 07:13 - port 22 open</li>
+          <li>[✔] 08:45 - wrote new script</li>
+        </ul>
+      </div>
     </div>
-    <canvas
-      id="matrix"
-      class="fixed top-0 left-0 w-full h-full -z-10 opacity-20"
-    ></canvas>
+
+    <!-- Blog Section -->
+    <section class="max-w-4xl w-full px-4 mt-20 space-y-8">
+      <h2 class="text-2xl sm:text-3xl font-bold glow mb-6">
+        # Latest Hacks & Logs
+      </h2>
+      <article class="glassy p-6 rounded-lg hover:bg-black/70 transition-colors">
+        <h3 class="text-xl font-semibold">💡 How I Hacked My Own Portfolio</h3>
+        <p class="text-sm text-green-300 mt-2">
+          I wanted a vibe. So I added canvas rain, glowy fonts, and terminal-style sections. Here's how...
+        </p>
+        <a href="#" class="inline-block mt-3 text-green-400 underline hover:text-green-200">Read more</a>
+      </article>
+
+      <article class="glassy p-6 rounded-lg hover:bg-black/70 transition-colors">
+        <h3 class="text-xl font-semibold">🧪 Experimenting with Tailwind & Terminals</h3>
+        <p class="text-sm text-green-300 mt-2">
+          Mixing terminal UI elements with Tailwind’s power. This blog post is basically a dark spell.
+        </p>
+        <a href="#" class="inline-block mt-3 text-green-400 underline hover:text-green-200">Read more</a>
+      </article>
+    </section>
+
+    <!-- Log Commands -->
+    <section class="max-w-4xl w-full px-4 mt-20">
+      <h2 class="text-2xl font-bold glow mb-6">$ logs --recent</h2>
+      <ul class="space-y-3 text-green-300">
+        <li><code>&gt; open blog/hacking-tailwind</code></li>
+        <li><code>&gt; run code "ascii-glow-effect.js"</code></li>
+        <li><code>&gt; compile mind --with caffeine</code></li>
+      </ul>
+    </section>
+
+    <!-- Matrix Canvas -->
+    <canvas id="matrix" class="fixed top-0 left-0 w-full h-full -z-10 opacity-20"></canvas>
     <script>
       const canvas = document.getElementById('matrix');
       const ctx = canvas.getContext('2d');
 
-      canvas.height = window.innerHeight;
-      canvas.width = window.innerWidth;
+      function resizeCanvas() {
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+      }
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
 
       const letters = '01';
       const fontSize = 14;
-      const columns = canvas.width / fontSize;
-
-      const drops = Array.from({ length: columns }).fill(1);
+      const columns = Math.floor(canvas.width / fontSize);
+      const drops = Array(columns).fill(1);
 
       function draw() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
@@ -264,7 +198,7 @@
         }
       }
 
-      setInterval(draw, 33);
+      setInterval(draw, 50);
     </script>
   </body>
 </html>
