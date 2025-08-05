@@ -40,7 +40,10 @@ var typed = new Typed('#element', {
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.projects');
 
-  projects.forEach((project) => {
+  projects.forEach((project, index) => {
+    // Calculate stagger delay: starts at 300ms and adds 150ms per card
+    const aosDelay = 300 + index * 150;
+
     // Card wrapper
     const card = document.createElement('div');
     card.className = `
@@ -50,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
       transition-all duration-300
       w-full sm:max-w-sm md:max-w-md lg:max-w-none
     `;
+
+    // Add AOS attributes here!
+    card.setAttribute('data-aos', 'fade-up');
+    card.setAttribute('data-aos-delay', aosDelay.toString());
 
     // Project image
     const img = document.createElement('img');
@@ -96,4 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.appendChild(content);
     container.appendChild(card);
   });
+
+  // Refresh AOS so it recognizes new elements
+  AOS.refresh();
 });
