@@ -31,14 +31,18 @@ body {
   background-image: url('https://images.unsplash.com/photo-1613077824640-0eef5c1237af?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHVycGxlJTIwZmxvd2Vyc3xlbnwwfHwwfHx8MA%3D%3D');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* This makes the background fixed */
-  z-index: -10;
+  background-attachment: fixed;
 }
 
-#welcome-section::before {
+#Welcome::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5); /* controls overlay opacity */
+  z-index: 0;
+}
+
+#Welcome > * {
+  position: relative;
+  z-index: 1;
 }

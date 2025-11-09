@@ -64,37 +64,123 @@
     <link rel="icon" href="public/purple-flower.png" type="image/png" />
     <title>Sunny | Portfolio</title>
   </head>
-  <body class="relative">
-    <main class="relative">
-      <header
-        class="fixed top-0 z-20 w-full bg-black/60"
-        x-data="{ open: false }"
+  <body>
+    <!-- HEADER SECTION -->
+    <header
+      class="fixed top-0 z-20 w-full bg-black/60"
+      x-data="{ open: false }"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-center p-3 lg:px-6"
+        aria-label="Global"
       >
-        <!-- Hacker Icon Button -->
-        <div class="fixed top-2 lg:top-4 left-4 z-50">
+        <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
           <button
-            onclick="window.location.href='hacker.html'"
-            class="w-6 h-6 lg:w-12 lg:h-12 bg-purple-400 rounded-full transition-transform hover:scale-110 focus:outline-none"
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            @click="open = true"
           >
-            <img
-              src="public/hacker.png"
-              alt="hacker icon"
-              class="rounded-full hover:cursor-pointer"
-            />
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
           </button>
         </div>
-
-        <nav
-          class="mx-auto flex max-w-7xl items-center justify-center p-5 lg:px-6"
-          aria-label="Global"
+        <div
+          class="rounded-2xl shadow-lg hidden backdrop-blur-lg lg:flex lg:gap-x-4"
         >
-          <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
+          <a
+            href="#Welcome"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+          >
+            <span class="relative z-10">Welcome</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
+          <a
+            href="#About"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+          >
+            <span class="relative z-10">About</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
+          <a
+            href="#Skills"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+          >
+            <span class="relative z-10">Skills</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
+          <a
+            href="#Projects"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+          >
+            <span class="relative z-10">Projects</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
+          <a
+            href="#Contact"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+          >
+            <span class="relative z-10">Contact</span>
+            <span
+              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div
+        x-init="$watch('open', value => {
+            if (value) {
+              document.body.style.overflow = 'hidden';
+              document.body.style.position = 'fixed';
+              document.body.style.width = '100%';
+            } else {
+              document.body.style.overflow = '';
+              document.body.style.position = '';
+              document.body.style.width = '';
+            }
+          })"
+        class="lg:hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <!-- Sidebar, shown only when open is true -->
+        <div
+          class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
+          x-show="open"
+          @scroll.window.prevent
+          x-cloak
+          @click.away="open = false"
+        >
+          <!-- Close button -->
+          <div class="flex items-center justify-end">
             <button
               type="button"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              @click="open = true"
+              class="-m-2.5 rounded-md p-2.5 text-white transition hover:bg-white/20"
+              @click="open = false"
             >
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">Close menu</span>
               <svg
                 class="size-6"
                 fill="none"
@@ -106,417 +192,347 @@
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
-          <div
-            class="rounded-2xl shadow-lg hidden backdrop-blur-lg lg:flex lg:gap-x-4"
-          >
-            <a
-              href="#Welcome"
-              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-            >
-              <span class="relative z-10">Welcome</span>
-              <span
-                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-              ></span>
-            </a>
-            <a
-              href="#About"
-              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-            >
-              <span class="relative z-10">About</span>
-              <span
-                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-              ></span>
-            </a>
-            <a
-              href="#Skills"
-              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-            >
-              <span class="relative z-10">Skills</span>
-              <span
-                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-              ></span>
-            </a>
-            <a
-              href="#Projects"
-              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-            >
-              <span class="relative z-10">Projects</span>
-              <span
-                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-              ></span>
-            </a>
-            <a
-              href="#Contact"
-              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-            >
-              <span class="relative z-10">Contact</span>
-              <span
-                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-              ></span>
-            </a>
-          </div>
-        </nav>
 
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div
-          x-init="$watch('open', value => {
-            if (value) {
-              document.body.style.overflow = 'hidden';
-              document.body.style.position = 'fixed';
-              document.body.style.width = '100%';
-            } else {
-              document.body.style.overflow = '';
-              document.body.style.position = '';
-              document.body.style.width = '';
-            }
-          })"
-          class="lg:hidden"
-          role="dialog"
-          aria-modal="true"
-        >
-          <!-- Sidebar, shown only when open is true -->
-          <div
-            class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
-            x-show="open"
-            @scroll.window.prevent
-            x-cloak
-            @click.away="open = false"
-          >
-            <!-- Close button -->
-            <div class="flex items-center justify-end">
-              <button
-                type="button"
-                class="-m-2.5 rounded-md p-2.5 text-white transition hover:bg-white/20"
-                @click="open = false"
+          <!-- Menu links -->
+          <div class="mt-10 flow-root">
+            <div class="space-y-6 text-center">
+              <template
+                x-for="item in ['Welcome', 'About', 'Skills', 'Projects', 'Contact']"
+                :key="item"
               >
-                <span class="sr-only">Close menu</span>
-                <svg
-                  class="size-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <!-- Menu links -->
-            <div class="mt-10 flow-root">
-              <div class="space-y-6 text-center">
-                <template
-                  x-for="item in ['Welcome', 'About', 'Skills', 'Projects', 'Contact']"
-                  :key="item"
-                >
-                  <a
-                    :href="`#${item}`"
-                    class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
-                    @click="open = false"
-                    x-text="item"
-                  ></a>
-                </template>
-              </div>
+                <a
+                  :href="`#${item}`"
+                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+                  @click="open = false"
+                  x-text="item"
+                ></a>
+              </template>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- Welcome Section -->
-      <section
-        id="Welcome"
-        class="relative flex h-screen flex-col items-center justify-center"
+    <!-- WELCOME SECTION -->
+    <section
+      id="Welcome"
+      class="relative flex h-screen flex-col items-center justify-center px-4 space-y-8 sm:space-y-10"
+    >
+      <h1
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        data-aos-easing="ease-in-out"
+        class="xsm:text-lg relative border-2 border-white/40 px-4 py-2 text-center text-4xl font-light tracking-wide sm:text-3xl md:text-5xl xl:text-6xl"
       >
-        <h1
+        Hello, I'm Krista.
+      </h1>
+
+      <span
+        id="element"
+        class="inline-block h-6 sm:h-8 md:h-10 p-2 align-top text-lg sm:text-xl tracking-wide text-purple-200"
+      ></span>
+
+      <div
+        class="relative flex flex-wrap justify-center gap-6 md:gap-10 pt-2"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        data-aos-easing="ease-in-out"
+      >
+        <a
+          href="/src/cv.html"
           data-aos="zoom-in"
-          data-aos-delay="300"
-          data-aos-easing="ease-in-out"
-          class="xsm:text-lg relative z-10 border border-white p-2 text-center text-4xl font-light sm:p-4 sm:text-3xl xl:text-5xl 2xl:text-6xl"
+          data-aos-delay="600"
+          data-aos-easing="ease-out-cubic"
+          class="inline-block bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white px-10 md:px-14 py-3 md:py-4 rounded-2xl font-semibold tracking-wide shadow-lg hover:shadow-purple-300/20 transition-all duration-500 ease-in-out hover:from-purple-600 hover:via-purple-700 hover:to-purple-800 active:scale-95 cursor-pointer text-center"
         >
-          Hello, I'm Krista.
-        </h1>
-        <span id="element" class="inline-block h-6 p-2 align-top"></span>
-      </section>
+          Resume
+        </a>
 
-      <!-- About Section -->
-      <section
-        id="About"
-        class="my-20 flex flex-col items-center justify-center gap-5 px-10 text-center"
-      >
-        <div class="mx-auto max-w-4xl px-4">
-          <h2
+        <a
+          href="#Projects"
+          data-aos="zoom-in"
+          data-aos-delay="700"
+          data-aos-easing="ease-out-cubic"
+          class="inline-block bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 text-white px-10 md:px-14 py-3 md:py-4 rounded-2xl font-semibold tracking-wide shadow-lg hover:shadow-purple-300/20 transition-all duration-500 ease-in-out hover:from-purple-600 hover:via-purple-700 hover:to-purple-800 active:scale-95 cursor-pointer text-center"
+        >
+          Projects
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section
+      id="About"
+      class="my-20 flex flex-col items-center justify-center gap-5 px-10 text-center"
+    >
+      <div class="mx-auto max-w-4xl px-4">
+        <h2
+          data-aos="fade-up"
+          class="mt-16 mb-12 border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
+        >
+          About Me
+        </h2>
+
+        <div class="text-left text-white/90">
+          <h3
             data-aos="fade-up"
-            class="mt-16 mb-12 border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
+            data-aos-delay="200"
+            class="mb-8 text-4xl font-bold text-blue-200"
           >
-            About Me
-          </h2>
+            I don’t <span class="italic">just</span> build websites.
+          </h3>
 
-          <div class="text-left text-white/90">
-            <h3
-              data-aos="fade-up"
-              data-aos-delay="200"
-              class="mb-8 text-4xl font-bold text-blue-200"
-            >
-              I don’t <span class="italic">just</span> build websites.
-            </h3>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="mb-6 text-lg leading-loose"
+          >
+            I focus on efficiency and aesthetics, crafting projects that are
+            easy on the eyes and flow seamlessly.
+          </p>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="300"
-              class="mb-6 text-lg leading-loose"
-            >
-              I focus on efficiency and aesthetics, crafting projects that are
-              easy on the eyes and flow seamlessly.
-            </p>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="mb-6 text-lg leading-loose"
+          >
+            I’ve always been fascinated by how things work. I’d open up old
+            electronics and tinker around, sometimes making things explode in my
+            face (don’t try this at home).
+          </p>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="400"
-              class="mb-6 text-lg leading-loose"
-            >
-              I’ve always been fascinated by how things work. I’d open up old
-              electronics and tinker around, sometimes making things explode in
-              my face (don’t try this at home).
-            </p>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="450"
+            class="mb-6 text-lg leading-loose"
+          >
+            I’m not a pro engineer, but I’m
+            <strong>stubborn as a mule</strong> and
+            <strong>resourceful as MacGyver</strong>. Those qualities set me
+            apart. I’ll use any means at my disposal to tackle a problem,
+            whether it’s opening my old $200 coding laptop because it wouldn’t
+            charge or spending three days trying to install Arch Linux on a 10
+            Mbps connection with constant installation failures and no IPv4 from
+            my router.
+          </p>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="450"
-              class="mb-6 text-lg leading-loose"
-            >
-              I’m not a pro engineer, but I’m
-              <strong>stubborn as a mule</strong> and
-              <strong>resourceful as MacGyver</strong>. Those qualities set me
-              apart. I’ll use any means at my disposal to tackle a problem,
-              whether it’s opening my old $200 coding laptop because it wouldn’t
-              charge or spending three days trying to install Arch Linux on a 10
-              Mbps connection with constant installation failures and no IPv4
-              from my router.
-            </p>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="500"
+            class="text-lg font-semibold text-purple-200"
+          >
+            Resilience, curiosity, and an insatiable urge to grow. Those are my
+            values.
+          </p>
+        </div>
+      </div>
+    </section>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="500"
-              class="text-lg font-semibold text-purple-200"
+    <!-- SKILLS SECTION -->
+    <section
+      id="Skills"
+      class="m-5 flex flex-col items-center justify-center p-5"
+    >
+      <div class="mx-auto max-w-4xl px-4">
+        <h2
+          data-aos="fade-up"
+          class="mt-16 mb-12 border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
+        >
+          Toolbox
+        </h2>
+
+        <div class="text-left text-white/90">
+          <h3
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="mb-8 text-4xl font-bold text-blue-200"
+          >
+            My go-to languages, tools, and frameworks.
+          </h3>
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="mb-6 text-lg leading-loose"
+          >
+            I’m a huge fan of Tailwind. It lets me style up to ten times faster
+            than regular CSS, and everything lives right in the HTML, unless I
+            want to customize even more, which makes working on projects super
+            convenient.
+          </p>
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="mb-6 text-lg leading-loose"
+          >
+            There are plenty more tools and languages I want to master, and I’m
+            always ready to learn whatever’s needed.
+          </p>
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="500"
+            class="text-lg font-semibold text-purple-200"
+          >
+            I don’t just know these tools, I fully integrate them into my work.
+          </p>
+        </div>
+
+        <div
+          class="my-24 sm:flex sm:flex-wrap grid grid-cols-2 items-center text-center justify-center gap-3 sm:gap-4 hover:cursor-default"
+        >
+          <!-- HTML5 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-500"
+              >HTML5</span
             >
-              Resilience, curiosity, and an insatiable urge to grow. Those are
-              my values.
-            </p>
+          </div>
+
+          <!-- CSS3 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
+              >CSS3</span
+            >
+          </div>
+
+          <!-- JavaScript -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
+              >JavaScript</span
+            >
+          </div>
+
+          <!-- Tailwind CSS -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_15px_#22d3ee]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-cyan-400"
+              >Tailwind CSS</span
+            >
+          </div>
+
+          <!-- Bootstrap -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-purple-500 hover:bg-purple-500/10 hover:shadow-[0_0_15px_#a855f7]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-purple-500"
+              >Bootstrap</span
+            >
+          </div>
+
+          <!-- Git -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="600"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-400 hover:bg-orange-400/10 hover:shadow-[0_0_15px_#fb923c]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-400"
+              >Git</span
+            >
+          </div>
+
+          <!-- GitHub -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="700"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-neutral-400 hover:bg-neutral-400/10 hover:shadow-[0_0_15px_#a3a3a3]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-neutral-400"
+              >GitHub</span
+            >
+          </div>
+
+          <!-- React -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="800"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-sky-400 hover:bg-sky-400/10 hover:shadow-[0_0_15px_#38bdf8]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-sky-400"
+              >React</span
+            >
+          </div>
+
+          <!-- TypeScript -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="900"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:bg-blue-400/10 hover:shadow-[0_0_15px_#60a5fa]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-400"
+              >TypeScript</span
+            >
+          </div>
+
+          <!-- Node.js -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-green-400"
+              >Node.js</span
+            >
+          </div>
+
+          <!-- Vite -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="1100"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
+              >Vite</span
+            >
+          </div>
+
+          <!-- VS Code -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="1200"
+            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
+          >
+            <span
+              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
+              >VS Code</span
+            >
           </div>
         </div>
-      </section>
 
-      <!-- Skills Section -->
-      <section
-        id="Skills"
-        class="m-5 flex flex-col items-center justify-center p-5"
-      >
-        <div class="mx-auto max-w-4xl px-4">
-          <h2
-            data-aos="fade-up"
-            class="mt-16 mb-12 border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
-          >
-            Toolbox
-          </h2>
-
-          <div class="text-left text-white/90">
-            <h3
-              data-aos="fade-up"
-              data-aos-delay="200"
-              class="mb-8 text-4xl font-bold text-blue-200"
-            >
-              My go-to languages, tools, and frameworks.
-            </h3>
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="300"
-              class="mb-6 text-lg leading-loose"
-            >
-              I’m a huge fan of Tailwind. It lets me style up to ten times
-              faster than regular CSS, and everything lives right in the
-              HTML, unless I want to customize even more, which makes working on
-              projects super convenient.
-            </p>
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="400"
-              class="mb-6 text-lg leading-loose"
-            >
-              There are plenty more tools and languages I want to master, and
-              I’m always ready to learn whatever’s needed.
-            </p>
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="500"
-              class="text-lg font-semibold text-purple-200"
-            >
-              I don’t just know these tools, I fully integrate them into my
-              work.
-            </p>
-          </div>
-
-          <div
-            class="my-24 sm:flex sm:flex-wrap grid grid-cols-2 items-center text-center justify-center gap-3 sm:gap-4 hover:cursor-default"
-          >
-            <!-- HTML5 -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="100"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-500"
-                >HTML5</span
-              >
-            </div>
-
-            <!-- CSS3 -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="200"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
-                >CSS3</span
-              >
-            </div>
-
-            <!-- JavaScript -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="300"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
-                >JavaScript</span
-              >
-            </div>
-
-            <!-- Tailwind CSS -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_15px_#22d3ee]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-cyan-400"
-                >Tailwind CSS</span
-              >
-            </div>
-
-            <!-- Bootstrap -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="500"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-purple-500 hover:bg-purple-500/10 hover:shadow-[0_0_15px_#a855f7]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-purple-500"
-                >Bootstrap</span
-              >
-            </div>
-
-            <!-- Git -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="600"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-400 hover:bg-orange-400/10 hover:shadow-[0_0_15px_#fb923c]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-400"
-                >Git</span
-              >
-            </div>
-
-            <!-- GitHub -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="700"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-neutral-400 hover:bg-neutral-400/10 hover:shadow-[0_0_15px_#a3a3a3]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-neutral-400"
-                >GitHub</span
-              >
-            </div>
-
-            <!-- React -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="800"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-sky-400 hover:bg-sky-400/10 hover:shadow-[0_0_15px_#38bdf8]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-sky-400"
-                >React</span
-              >
-            </div>
-
-            <!-- TypeScript -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="900"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:bg-blue-400/10 hover:shadow-[0_0_15px_#60a5fa]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-400"
-                >TypeScript</span
-              >
-            </div>
-
-            <!-- Node.js -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="1000"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-green-400"
-                >Node.js</span
-              >
-            </div>
-
-            <!-- Vite -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="1100"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
-                >Vite</span
-              >
-            </div>
-
-            <!-- VS Code -->
-            <div
-              data-aos="fade-up"
-              data-aos-delay="1200"
-              class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
-            >
-              <span
-                class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
-                >VS Code</span
-              >
-            </div>
-          </div>
-
-          <!-- POTENTIAL LIGHT THEME
+        <!-- POTENTIAL LIGHT THEME
           
           <div
             class="flex flex-wrap gap-3 p-6 bg-pink-50 rounded-lg justify-center"
@@ -558,209 +574,207 @@
               >TypeScript</span
             >
           </div> -->
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Project Section -->
-      <section
-        data-aos="fade-up"
-        data-aos-delay="500"
-        id="Projects"
-        class="my-20 flex flex-col items-center px-5"
-      >
-        <!-- Text & Project Container -->
-        <div class="mx-auto w-full max-w-4xl px-4">
-          <!-- Heading -->
-          <h2
+    <!-- PROJECT SECTION -->
+    <section
+      data-aos="fade-up"
+      data-aos-delay="500"
+      id="Projects"
+      class="my-20 flex flex-col items-center px-5"
+    >
+      <!-- Text & Project Container -->
+      <div class="mx-auto w-full max-w-4xl px-4">
+        <!-- Heading -->
+        <h2
+          data-aos="fade-up"
+          class="mt-16 mb-12 w-fit border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
+        >
+          Projects
+        </h2>
+
+        <!-- Intro Text -->
+        <div class="text-left text-white/90">
+          <h3
             data-aos="fade-up"
-            class="mt-16 mb-12 w-fit border-l-4 border-purple-400 pl-4 text-start text-3xl font-semibold text-white/90 transition duration-300 ease-in-out hover:text-purple-300 sm:text-4xl lg:text-5xl"
+            data-aos-delay="200"
+            class="mb-8 text-4xl font-bold text-blue-200"
           >
-            Projects
-          </h2>
+            I bring ideas to life with code, creativity, and snacks.
+          </h3>
 
-          <!-- Intro Text -->
-          <div class="text-left text-white/90">
-            <h3
-              data-aos="fade-up"
-              data-aos-delay="200"
-              class="mb-8 text-4xl font-bold text-blue-200"
-            >
-              I bring ideas to life with code, creativity, and snacks.
-            </h3>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="mb-6 text-lg leading-loose"
+          >
+            Every project you’ll see below? It's the result of late nights, big
+            dreams, and a borderline obsessive attention to detail.
+          </p>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="300"
-              class="mb-6 text-lg leading-loose"
-            >
-              Every project you’ll see below? It's the result of late nights,
-              big dreams, and a borderline obsessive attention to detail.
-            </p>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="mb-6 text-lg leading-loose"
+          >
+            Whether it's a responsive landing page, a slick UI component, or a
+            fully-functioning app, I build with users in mind and polish till it
+            shines.
+          </p>
 
-            <p
-              data-aos="fade-up"
-              data-aos-delay="400"
-              class="mb-6 text-lg leading-loose"
-            >
-              Whether it's a responsive landing page, a slick UI component, or a
-              fully-functioning app, I build with users in mind and polish till
-              it shines.
-            </p>
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="500"
-              class="text-lg font-semibold text-purple-200"
-            >
-              These are my proof of growth, grit, and good taste.
-            </p>
-          </div>
-
-          <!-- Project Grid -->
-          <div
+          <p
             data-aos="fade-up"
             data-aos-delay="500"
-            class="projects my-16 grid grid-cols-1 place-items-center gap-10 sm:grid-cols-2 lg:grid-cols-2"
+            class="text-lg font-semibold text-purple-200"
           >
-            <!-- Project cards go here -->
-          </div>
-
-          <!-- Link to All Projects -->
-          <div class="mt-8 flex justify-center">
-            <a
-              target="_blank"
-              href="https://github.com/sunnycc17?tab=repositories"
-              class="text-xl font-semibold text-purple-300 transition hover:underline"
-            >
-              Show All <i class="ri-arrow-right-s-line"></i>
-            </a>
-          </div>
+            These are my proof of growth, grit, and good taste.
+          </p>
         </div>
-      </section>
 
-      <!-- Contact Section -->
-
-      <section
-        id="Contact"
-        class="mx-auto mt-40 mb-48 max-w-5xl px-6 sm:px-12 lg:px-24 text-left"
-      >
-        <h5
+        <!-- Project Grid -->
+        <div
           data-aos="fade-up"
+          data-aos-delay="500"
+          class="projects my-16 grid grid-cols-1 place-items-center gap-10 sm:grid-cols-2 lg:grid-cols-2"
+        >
+          <!-- Project cards go here -->
+        </div>
+
+        <!-- Link to All Projects -->
+        <div class="mt-8 flex justify-center">
+          <a
+            target="_blank"
+            href="https://github.com/sunnycc17?tab=repositories"
+            class="text-xl font-semibold text-purple-300 transition hover:underline"
+          >
+            Show All <i class="ri-arrow-right-s-line"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section
+      id="Contact"
+      class="mx-auto mt-40 mb-48 max-w-5xl px-6 sm:px-12 lg:px-24 text-left"
+    >
+      <h5
+        data-aos="fade-up"
+        data-aos-delay="300"
+        class="mb-10 text-5xl font-extrabold tracking-tight text-purple-100 sm:text-6xl lg:text-7xl leading-tight"
+      >
+        Let’s work together.
+      </h5>
+
+      <p
+        data-aos="fade-up"
+        data-aos-delay="350"
+        class="mb-8 text-2xl font-medium text-purple-300 sm:text-3xl leading-relaxed"
+      >
+        But first—what’s your favorite sandwich?
+      </p>
+
+      <p
+        data-aos="fade-up"
+        data-aos-delay="375"
+        class="mb-16 text-lg font-light leading-relaxed text-white/80 sm:text-xl"
+      >
+        Whether it’s a job offer, a quirky project idea, or a questionable
+        sandwich combo— I’m always down for great code and great conversation.
+      </p>
+      <div class="mb-20 flex flex-wrap items-center gap-2 sm:gap-6">
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/kristina-vogli-9227042a6/"
+          target="_blank"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-purple-400 hover:bg-purple-400/10 hover:shadow-[0_0_15px_5px_rgba(192,132,252,0.4)]"
+        >
+          <i
+            data-lucide="linkedin"
+            class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-purple-400 group-hover:animate-bounce"
+          ></i>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/sunnycc17"
+          target="_blank"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
+        >
+          <i
+            data-lucide="github"
+            class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-yellow-400 group-hover:animate-bounce"
+          ></i>
+        </a>
+
+        <!-- Email -->
+        <a
+          href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#118;&#111;&#103;&#107;&#114;&#105;&#115;&#116;&#105;&#110;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
+          data-aos="zoom-in"
           data-aos-delay="300"
-          class="mb-10 text-5xl font-extrabold tracking-tight text-purple-100 sm:text-6xl lg:text-7xl leading-tight"
+          class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
         >
-          Let’s work together.
-        </h5>
+          <i
+            data-lucide="mail"
+            class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-orange-500 group-hover:animate-bounce"
+          ></i>
+        </a>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="350"
-          class="mb-8 text-2xl font-medium text-purple-300 sm:text-3xl leading-relaxed"
+        <!-- CV -->
+        <a
+          href="src/cv.html"
+          target="_blank"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
         >
-          But first—what’s your favorite sandwich?
-        </p>
+          <i
+            data-lucide="file-text"
+            class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-green-400 group-hover:animate-bounce"
+          ></i>
+        </a>
+      </div>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="375"
-          class="mb-16 text-lg font-light leading-relaxed text-white/80 sm:text-xl"
-        >
-          Whether it’s a job offer, a quirky project idea, or a questionable
-          sandwich combo— I’m always down for great code and great conversation.
-        </p>
-        <div class="mb-20 flex flex-wrap items-center gap-2 sm:gap-6">
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/kristina-vogli-9227042a6/"
-            target="_blank"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-purple-400 hover:bg-purple-400/10 hover:shadow-[0_0_15px_5px_rgba(192,132,252,0.4)]"
-          >
-            <i
-              data-lucide="linkedin"
-              class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-purple-400 group-hover:animate-bounce"
-            ></i>
-          </a>
-
-          <!-- GitHub -->
-          <a
-            href="https://github.com/sunnycc17"
-            target="_blank"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
-          >
-            <i
-              data-lucide="github"
-              class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-yellow-400 group-hover:animate-bounce"
-            ></i>
-          </a>
-
-          <!-- Email -->
-          <a
-            href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#118;&#111;&#103;&#107;&#114;&#105;&#115;&#116;&#105;&#110;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
-            data-aos="zoom-in"
-            data-aos-delay="300"
-            class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
-          >
-            <i
-              data-lucide="mail"
-              class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-orange-500 group-hover:animate-bounce"
-            ></i>
-          </a>
-
-          <!-- CV -->
-          <a
-            href="src/cv.html"
-            target="_blank"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-            class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
-          >
-            <i
-              data-lucide="file-text"
-              class="lucide h-5 w-5 sm:h-4 sm:w-4 md:h-6 md:w-6 text-white group-hover:text-green-400 group-hover:animate-bounce"
-            ></i>
-          </a>
-        </div>
-
-        <p
-          data-aos="fade-up"
-          data-aos-delay="450"
-          class="text-xl font-medium text-gray-100 sm:text-2xl"
-        >
-          So text me
-          <em
-            class="bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300 bg-clip-text font-bold text-transparent"
-            >maybe?</em
-          >
-        </p>
-      </section>
-
-      <footer
-        class="w-full bg-gradient-to-br from-[#6B5B95] to-[#B8A9C9] p-4 text-center text-[0.9rem] sm:text-base font-light text-white tracking-wide"
+      <p
+        data-aos="fade-up"
+        data-aos-delay="450"
+        class="text-xl font-medium text-gray-100 sm:text-2xl"
       >
-        <span class="block">
-          &copy; <span id="year" class="mr-1"></span>Sunny | All rights
-          reserved.
-        </span>
-      </footer>
-    </main>
+        So text me
+        <em
+          class="bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300 bg-clip-text font-bold text-transparent"
+          >maybe?</em
+        >
+      </p>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer
+      class="w-full bg-gradient-to-br from-[#6B5B95] to-[#B8A9C9] p-4 text-center text-[0.9rem] sm:text-base font-light text-white tracking-wide"
+    >
+      <span class="block">
+        &copy; <span id="year" class="mr-1"></span>Sunny | All rights reserved.
+      </span>
+    </footer>
   </body>
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- alpine js -->
+  <!-- ALPINE -->
   <script
     src="https://cdn.jsdelivr.net/npm/alpinejs@latest/dist/cdn.min.js"
     defer
   ></script>
 
-  <!-- typed js -->
+  <!--TYPED LIBRARY -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-  <!-- AOS JS -->
+  <!-- ANOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script type="module" src="./script.js"></script>
 </html>
