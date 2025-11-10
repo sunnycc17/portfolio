@@ -66,85 +66,84 @@
   </head>
   <body>
     <!-- HEADER SECTION -->
-    <header
-      class="fixed top-0 z-20 w-full bg-black/60 backdrop-blur-lg"
-      x-data="{ open: false }"
-    >
-      <nav
-        class="mx-auto flex max-w-7xl items-center justify-center p-6 sm:p-3"
-        aria-label="Global"
-      >
-        <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
-          <button
-            type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-            @click="open = true"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="size-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
+    <header class="fixed top-0 z-20 w-full" x-data="{ open: false }">
+      <div class="bg-black/60 backdrop-blur-sm">
+        <nav
+          class="mx-auto flex max-w-7xl items-center justify-center p-5 sm:p-4"
+          aria-label="Global"
+        >
+          <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
+            <button
+              type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              @click="open = true"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-4">
-          <a
-            href="#Welcome"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
-          >
-            <span class="relative z-10">Welcome</span>
-            <span
-              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-            ></span>
-          </a>
-          <a
-            href="#About"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
-          >
-            <span class="relative z-10">About</span>
-            <span
-              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-            ></span>
-          </a>
-          <a
-            href="#Skills"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
-          >
-            <span class="relative z-10">Skills</span>
-            <span
-              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-            ></span>
-          </a>
-          <a
-            href="#Projects"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
-          >
-            <span class="relative z-10">Projects</span>
-            <span
-              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-            ></span>
-          </a>
-          <a
-            href="#Contact"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
-          >
-            <span class="relative z-10">Contact</span>
-            <span
-              class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
-            ></span>
-          </a>
-        </div>
-      </nav>
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-4">
+            <a
+              href="#Welcome"
+              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
+            >
+              <span class="relative z-10">Welcome</span>
+              <span
+                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+              ></span>
+            </a>
+            <a
+              href="#About"
+              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
+            >
+              <span class="relative z-10">About</span>
+              <span
+                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+              ></span>
+            </a>
+            <a
+              href="#Skills"
+              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
+            >
+              <span class="relative z-10">Skills</span>
+              <span
+                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+              ></span>
+            </a>
+            <a
+              href="#Projects"
+              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
+            >
+              <span class="relative z-10">Projects</span>
+              <span
+                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+              ></span>
+            </a>
+            <a
+              href="#Contact"
+              class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
+            >
+              <span class="relative z-10">Contact</span>
+              <span
+                class="absolute inset-0 rounded-xl bg-purple-800/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"
+              ></span>
+            </a>
+          </div>
+        </nav>
+      </div>
 
       <!-- Mobile menu, show/hide based on menu open state. -->
       <div
@@ -229,8 +228,6 @@
     >
       <h1
         data-aos="zoom-in"
-        data-aos-delay="200"
-        data-aos-easing="ease-in-out"
         class="xsm:text-lg relative border-2 border-white/40 px-4 py-2 text-center text-4xl font-light tracking-wide sm:text-3xl md:text-5xl xl:text-6xl"
       >
         Hello, I'm Krista.
@@ -244,13 +241,10 @@
       <div
         class="relative flex flex-wrap justify-center gap-6 md:gap-10 pt-2"
         data-aos="fade-up"
-        data-aos-delay="400"
-        data-aos-easing="ease-in-out"
       >
         <a
           href="./src/cv.html"
           data-aos="zoom-in"
-          data-aos-delay="600"
           data-aos-easing="ease-out-cubic"
           class="inline-block bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white px-10 md:px-14 py-3 md:py-4 rounded-2xl font-semibold tracking-wide transition-all duration-500 ease-in-out hover:from-purple-500 hover:via-purple-600 hover:to-purple-700 active:scale-95 cursor-pointer text-center shadow-[0_6px_0_#4b0082] hover:shadow-[0_4px_0_#4b0082] active:shadow-[0_0_0_#4b0082] active:translate-y-[6px] transform perspective-1000"
         >
@@ -260,7 +254,6 @@
         <a
           href="#Projects"
           data-aos="zoom-in"
-          data-aos-delay="700"
           data-aos-easing="ease-out-cubic"
           class="inline-block bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white px-10 md:px-14 py-3 md:py-4 rounded-2xl font-semibold tracking-wide transition-all duration-500 ease-in-out hover:from-purple-500 hover:via-purple-600 hover:to-purple-700 active:scale-95 cursor-pointer text-center shadow-[0_6px_0_#4b0082] hover:shadow-[0_4px_0_#4b0082] active:shadow-[0_0_0_#4b0082] active:translate-y-[6px] transform perspective-1000"
         >
@@ -283,38 +276,22 @@
         </h2>
 
         <div class="text-left text-white/90">
-          <h3
-            data-aos="fade-up"
-            data-aos-delay="200"
-            class="mb-8 text-4xl font-bold text-blue-200"
-          >
+          <h3 data-aos="fade-up" class="mb-8 text-4xl font-bold text-blue-200">
             I don’t <span class="italic">just</span> build websites.
           </h3>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="300"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             I focus on efficiency and aesthetics, crafting projects that are
             easy on the eyes and flow seamlessly.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="400"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             I’ve always been fascinated by how things work. I’d open up old
             electronics and tinker around, sometimes making things explode in my
             face (don’t try this at home).
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="450"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             I’m not a pro engineer, but I’m
             <strong>stubborn as a mule</strong> and
             <strong>resourceful as MacGyver</strong>. Those qualities set me
@@ -325,11 +302,7 @@
             my router.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="500"
-            class="text-lg font-semibold text-purple-200"
-          >
+          <p data-aos="fade-up" class="text-lg font-semibold text-purple-200">
             Resilience, curiosity, and an insatiable urge to grow. Those are my
             values.
           </p>
@@ -351,39 +324,23 @@
         </h2>
 
         <div class="text-left text-white/90">
-          <h3
-            data-aos="fade-up"
-            data-aos-delay="200"
-            class="mb-8 text-4xl font-bold text-blue-200"
-          >
+          <h3 data-aos="fade-up" class="mb-8 text-4xl font-bold text-blue-200">
             My go-to languages, tools, and frameworks.
           </h3>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="300"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             I’m a huge fan of Tailwind. It lets me style up to ten times faster
             than regular CSS, and everything lives right in the HTML, unless I
             want to customize even more, which makes working on projects super
             convenient.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="400"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             There are plenty more tools and languages I want to master, and I’m
             always ready to learn whatever’s needed.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="500"
-            class="text-lg font-semibold text-purple-200"
-          >
+          <p data-aos="fade-up" class="text-lg font-semibold text-purple-200">
             I don’t just know these tools, I fully integrate them into my work.
           </p>
         </div>
@@ -391,7 +348,6 @@
         <!-- Word Cloud – Purple Blob Hover -->
         <div
           data-aos="fade-up"
-          data-aos-delay="550"
           x-data="{
     skills: [
       'HTML5','CSS3','JavaScript','Tailwind','Bootstrap',
@@ -423,7 +379,6 @@
     <!-- PROJECT SECTION -->
     <section
       data-aos="fade-up"
-      data-aos-delay="500"
       id="Projects"
       class="my-20 flex flex-col items-center px-5"
     >
@@ -439,38 +394,22 @@
 
         <!-- Intro Text -->
         <div class="text-left text-white/90">
-          <h3
-            data-aos="fade-up"
-            data-aos-delay="200"
-            class="mb-8 text-4xl font-bold text-blue-200"
-          >
+          <h3 data-aos="fade-up" class="mb-8 text-4xl font-bold text-blue-200">
             I bring ideas to life with code, creativity, and snacks.
           </h3>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="300"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             Every project you’ll see below? It's the result of late nights, big
             dreams, and a borderline obsessive attention to detail.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="400"
-            class="mb-6 text-lg leading-loose"
-          >
+          <p data-aos="fade-up" class="mb-6 text-lg leading-loose">
             Whether it's a responsive landing page, a slick UI component, or a
             fully-functioning app, I build with users in mind and polish till it
             shines.
           </p>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="500"
-            class="text-lg font-semibold text-purple-200"
-          >
+          <p data-aos="fade-up" class="text-lg font-semibold text-purple-200">
             These are my proof of growth, grit, and good taste.
           </p>
         </div>
@@ -478,7 +417,6 @@
         <!-- Project Grid -->
         <div
           data-aos="fade-up"
-          data-aos-delay="500"
           class="projects my-16 grid grid-cols-1 place-items-center gap-10 sm:grid-cols-2 lg:grid-cols-2"
         >
           <!-- Project cards go here -->
@@ -504,7 +442,6 @@
     >
       <h5
         data-aos="fade-up"
-        data-aos-delay="300"
         class="mb-10 text-5xl font-extrabold tracking-tight text-purple-100 sm:text-6xl lg:text-7xl leading-tight"
       >
         Let’s work together.
@@ -512,7 +449,6 @@
 
       <p
         data-aos="fade-up"
-        data-aos-delay="350"
         class="mb-8 text-2xl font-medium text-purple-300 sm:text-3xl leading-relaxed"
       >
         But first—what’s your favorite sandwich?
@@ -520,7 +456,6 @@
 
       <p
         data-aos="fade-up"
-        data-aos-delay="375"
         class="mb-16 text-lg font-light leading-relaxed text-white/80 sm:text-xl"
       >
         Whether it’s a job offer, a quirky project idea, or a questionable
@@ -532,7 +467,6 @@
           href="https://www.linkedin.com/in/kristina-vogli-9227042a6/"
           target="_blank"
           data-aos="zoom-in"
-          data-aos-delay="100"
           class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-purple-400 hover:bg-purple-400/10 hover:shadow-[0_0_15px_5px_rgba(192,132,252,0.4)]"
         >
           <i
@@ -546,7 +480,6 @@
           href="https://github.com/sunnycc17"
           target="_blank"
           data-aos="zoom-in"
-          data-aos-delay="200"
           class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
         >
           <i
@@ -559,7 +492,6 @@
         <a
           href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#118;&#111;&#103;&#107;&#114;&#105;&#115;&#116;&#105;&#110;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
           data-aos="zoom-in"
-          data-aos-delay="300"
           class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
         >
           <i
@@ -573,7 +505,6 @@
           href="src/cv.html"
           target="_blank"
           data-aos="zoom-in"
-          data-aos-delay="400"
           class="group flex items-center justify-center rounded-full border-2 border-white p-4 transition-all duration-300 ease-in-out hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
         >
           <i
@@ -585,7 +516,6 @@
 
       <p
         data-aos="fade-up"
-        data-aos-delay="450"
         class="text-xl font-medium text-gray-100 sm:text-2xl"
       >
         So text me
