@@ -217,9 +217,8 @@
       >
         Hello, I'm Krista.
       </h1>
-      <div class="flex flex-row p-2 mt-7">
+      <div data-aos="zoom-in" class="flex flex-row p-2 mt-7">
         <span
-          data-aos="zoom-in"
           id="element"
           class="inline h-1 text-lg sm:text-xl md:text-2xl tracking-wide text-purple-300"
         >
@@ -359,22 +358,31 @@
 
           <!-- Word Cloud – Purple Blob Hover -->
           <div
-            data-aos="fade-up"
             x-data="{
     skills: [
-      'HTML5','CSS3','JavaScript','Tailwind','Bootstrap',
-      'Git','GitHub','React','TypeScript','Node.js',
-      'Vite','VS Code'
-    ],
+      { name: 'HTML5', color: '#E34F26' },
+      { name: 'CSS3', color: '#1572B6' },
+      { name: 'JavaScript', color: '#F7DF1E' },
+      { name: 'Tailwind', color: '#38B2AC' },
+      { name: 'Bootstrap', color: '#7952B3' },
+      { name: 'Git', color: '#F05032' },
+      { name: 'GitHub', color: '#181717' },
+      { name: 'React', color: '#61DAFB' },
+      { name: 'TypeScript', color: '#3178C6' },
+      { name: 'Node.js', color: '#339933' },
+      { name: 'Vite', color: '#646CFF' },
+      { name: 'VS Code', color: '#007ACC' }
+    ]
   }"
-            class="relative mt-16 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-center"
+            class="relative mt-24 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-center"
           >
             <template x-for="(skill, i) in skills" :key="i">
               <div
-                class="relative px-4 sm:px-7 py-2 sm:py-4 rounded-full text-white font-semibold overflow-hidden"
-                :style="`font-size: ${0.9 + Math.random() * 0.7}rem;`"
+                data-aos="fade-up"
+                class="relative px-6 sm:px-8 py-3 sm:py-4 rounded-full font-mono font-extrabold text-white overflow-hidden border border-white/20 transition transform duration-300 ease-in-out hover:scale-110 hover:shadow-2xl"
+                :style="`background-color: ${skill.color}; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.2);`"
               >
-                <span class="skill-text" x-text="skill"></span>
+                <span x-text="skill.name"></span>
               </div>
             </template>
           </div>
@@ -433,6 +441,7 @@
           <!-- Link to All Projects -->
           <div class="mt-8 flex justify-center">
             <a
+              data-aos="fade-up"
               target="_blank"
               href="https://github.com/sunnycc17?tab=repositories"
               class="text-xl font-semibold text-purple-300 transition hover:underline"
