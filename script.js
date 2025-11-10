@@ -28,13 +28,18 @@ AOS.init({
 //HERO SECTION TYPED SETTINGS
 // eslint-disable-next-line no-unused-vars, no-undef
 var typed = new Typed('#element', {
-  strings: ['A Linux Enthusiast', 'A Problem Solver'],
-  typeSpeed: 50,
-  backSpeed: 30,
+  strings: [
+    'A Front-End Developer. ',
+    'A Linux Enthusiast. ',
+    'A Problem Solver. ',
+  ],
+  typeSpeed: 50, // slightly slower typing
+  backSpeed: 25, // slightly slower deleting
+  backDelay: 1500, // wait 2.5s before deleting
   loop: true,
   startDelay: 500,
   showCursor: true,
-  cursorChar: '|',
+  cursorChar: '┃',
 });
 
 document.addEventListener('DOMContentLoaded', () => {
