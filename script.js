@@ -16,25 +16,25 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 //  ANIMATE ON SCROLL SETTINGS
 AOS.init({
-  debug: true, // Show AOS debug logs in the console
-  duration: 1000, // Animation duration (ms)
-  delay: 200, // Delay before animation starts
-  easing: 'ease-in-out', // Type of easing
-  once: false, // Should animation happen only once?
-  mirror: false, // Should elements animate when scrolling back up?
-  anchorPlacement: 'top-bottom', // Where animation triggers
+  debug: true,
+  duration: 600, // faster animation
+  delay: 100, // shorter delay
+  easing: 'ease-in-out',
+  once: false,
+  mirror: false,
+  anchorPlacement: 'top-bottom',
 });
 
 //HERO SECTION TYPED SETTINGS
 // eslint-disable-next-line no-unused-vars, no-undef
 var typed = new Typed('#element', {
-  strings: ['A Front-End Developer.'],
+  strings: ['A Linux Enthusiast', 'A Problem Solver'],
   typeSpeed: 50,
-  loop: false,
-  loopCount: Infinity,
-  fadeOut: false,
-  startDelay: 1000,
-  showCursor: false,
+  backSpeed: 30,
+  loop: true,
+  startDelay: 500,
+  showCursor: true,
+  cursorChar: '|',
 });
 
 document.addEventListener('DOMContentLoaded', () => {

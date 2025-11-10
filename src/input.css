@@ -46,3 +46,19 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.skill-text {
+  position: relative;
+  display: inline-block;
+  color: white;
+  background: linear-gradient(to right, #a855f7 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+}
+
+.skill-text:hover {
+  background-position: 0 0;
+}
