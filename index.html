@@ -167,8 +167,14 @@
       >
         <!-- Sidebar, shown only when open is true -->
         <div
-          class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20"
+          class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20 transform transition-transform duration-500 ease-in-out"
           x-show="open"
+          x-transition:enter="transform transition ease-in-out duration-500"
+          x-transition:enter-start="translate-x-full"
+          x-transition:enter-end="translate-x-0"
+          x-transition:leave="transform transition ease-in-out duration-500"
+          x-transition:leave-start="translate-x-0"
+          x-transition:leave-end="translate-x-full"
           @scroll.window.prevent
           x-cloak
           @click.away="open = false"
