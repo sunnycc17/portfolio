@@ -18,7 +18,7 @@ export const projects = [
   {
     href: 'https://sunnycc17.github.io/palindrome-app/',
     imgSrc: './public/palindrome-project.png',
-    alt: 'A Palindrome Checker',
+    alt: 'A Palindrome Checker App',
     title: 'Palindrome Checker',
     tooltip:
       'React + TypeScript tool with AOS animations. Simple UI for testing palindromes in real-time.',
@@ -42,7 +42,7 @@ export const projects = [
   {
     href: 'https://sunnycc17.github.io/andrew-shaw-tutoring/',
     imgSrc: './public/andrew-project.webp',
-    alt: 'Music Tutor Website',
+    alt: 'A Music Tutor Website',
     title: 'Music Tutor Website',
     tooltip:
       'Responsive site with HTML, Tailwind, and JavaScript. Includes SEO tags, embedded videos, and Remix Icons.',
