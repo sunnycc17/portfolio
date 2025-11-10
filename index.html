@@ -69,14 +69,14 @@
     <header class="fixed top-0 z-20 w-full" x-data="{ open: false }">
       <div class="bg-black/60 backdrop-blur-sm">
         <nav
-          class="mx-auto flex max-w-7xl items-center justify-center p-5 sm:p-4"
+          class="mx-auto flex max-w-7xl items-center justify-center p-6 sm:p-4"
           aria-label="Global"
         >
           <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
             <button
               type="button"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              @click="open = true"
+              @click.prevent="open = true"
             >
               <span class="sr-only">Open main menu</span>
               <svg
@@ -146,25 +146,10 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu open state. -->
-      <div
-        x-init="$watch('open', value => {
-            if (value) {
-              document.body.style.overflow = 'hidden';
-              document.body.style.position = 'fixed';
-              document.body.style.width = '100%';
-            } else {
-              document.body.style.overflow = '';
-              document.body.style.position = '';
-              document.body.style.width = '';
-            }
-          })"
-        class="lg:hidden"
-        role="dialog"
-        aria-modal="true"
-      >
+      <div class="lg:hidden" role="dialog" aria-modal="true">
         <!-- Sidebar, shown only when open is true -->
         <div
-          class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 shadow-2xl backdrop-blur-lg sm:max-w-sm sm:ring-1 sm:ring-white/20 transform transition-transform duration-500 ease-in-out"
+          class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-white/20 transform transition-transform duration-500 ease-in-out"
           x-show="open"
           x-transition:enter="transform transition ease-in-out duration-500"
           x-transition:enter-start="translate-x-full"
@@ -180,7 +165,7 @@
           <div class="flex items-center justify-end">
             <button
               type="button"
-              class="-m-2.5 rounded-md p-2.5 text-white transition hover:bg-white/20"
+              class="-m-2.5 rounded-md p-2.5 text-white"
               @click="open = false"
             >
               <span class="sr-only">Close menu</span>
@@ -203,14 +188,14 @@
 
           <!-- Menu links -->
           <div class="mt-10 flow-root">
-            <div class="space-y-6 text-center">
+            <div class="space-y-6 text-left">
               <template
                 x-for="item in ['Welcome', 'About', 'Skills', 'Projects', 'Contact']"
                 :key="item"
               >
                 <a
                   :href="`#${item}`"
-                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70"
+                  class="block px-4 py-4 text-lg font-semibold text-white border-purple-500 border-b"
                   @click="open = false"
                   x-text="item"
                 ></a>
@@ -224,22 +209,22 @@
     <!-- WELCOME SECTION -->
     <section
       id="Welcome"
-      class="relative flex h-screen flex-col items-center justify-center px-4 space-y-8 sm:space-y-10"
+      class="relative flex h-screen flex-col items-center justify-center px-4"
     >
       <h1
         data-aos="zoom-in"
-        class="xsm:text-lg relative border-2 border-white/40 px-4 py-2 text-center text-4xl font-light tracking-wide sm:text-3xl md:text-5xl xl:text-6xl"
+        class="xsm:text-lg relative border-b text-center py-2 text-4xl font-light tracking-wide sm:text-3xl md:text-5xl xl:text-6xl"
       >
         Hello, I'm Krista.
       </h1>
 
       <span
         id="element"
-        class="inline-block h-6 sm:h-8 md:h-10 p-2 align-top text-lg sm:text-xl tracking-wide text-purple-200"
+        class="inline-block h-6 sm:h-8 md:h-10 p-2 align-top text-lg sm:text-xl tracking-wide text-purple-300 py-4"
       ></span>
 
       <div
-        class="relative flex flex-wrap justify-center gap-6 md:gap-10 pt-2"
+        class="relative flex flex-wrap justify-center gap-6 md:gap-10 pt-7 mt-12"
         data-aos="fade-up"
       >
         <a
@@ -346,33 +331,34 @@
         </div>
 
         <!-- Word Cloud – Purple Blob Hover -->
-        <div
-          data-aos="fade-up"
-          x-data="{
+     <div
+  data-aos="fade-up"
+  x-data="{
     skills: [
       'HTML5','CSS3','JavaScript','Tailwind','Bootstrap',
       'Git','GitHub','React','TypeScript','Node.js',
       'Vite','VS Code'
     ]
   }"
-          class="relative my-24 flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-center"
-        >
-          <template x-for="(skill, i) in skills" :key="i">
-            <div
-              x-data="{ x: 0, y: 0 }"
-              @mousemove="x = $event.offsetX; y = $event.offsetY"
-              @mouseleave="x = 9999; y = 9999"
-              class="relative group select-none px-5 sm:px-7 py-3 sm:py-4 rounded-full text-white font-semibold transition-transform duration-300 ease-out hover:scale-125 overflow-hidden"
-              :style="`font-size: ${1 + Math.random() * 0.8}rem;`"
-            >
-              <span class="relative z-10" x-text="skill"></span>
-              <span
-                class="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 blur-xl"
-                :style="`background: radial-gradient(140px circle at ${x}px ${y}px, rgba(168,85,247,0.55), rgba(126,34,206,0.15) 70%, transparent 100%); filter: brightness(1.8) saturate(1.6);`"
-              ></span>
-            </div>
-          </template>
-        </div>
+  class="relative mt-16 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-center"
+>
+  <template x-for="(skill, i) in skills" :key="i">
+    <div
+      x-data="{ x: 0, y: 0 }"
+      @mousemove="x = $event.offsetX; y = $event.offsetY"
+      @mouseleave="x = 9999; y = 9999"
+      class="relative group select-none px-4 sm:px-7 py-2 sm:py-4 rounded-full text-white font-semibold transition-transform duration-300 ease-out overflow-hidden"
+      :style="`font-size: ${0.9 + Math.random() * 0.7}rem;`"
+    >
+      <span class="relative z-10" x-text="skill"></span>
+      <span
+        class="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 blur-xl"
+        :style="`background: radial-gradient(140px circle at ${x}px ${y}px, rgba(168,85,247,0.55), rgba(126,34,206,0.15) 70%, transparent 100%); filter: brightness(1.8) saturate(1.6);`"
+      ></span>
+    </div>
+  </template>
+</div>
+
       </div>
     </section>
 
