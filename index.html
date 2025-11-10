@@ -67,11 +67,11 @@
   <body>
     <!-- HEADER SECTION -->
     <header
-      class="fixed top-0 z-20 w-full bg-black/60"
+      class="fixed top-0 z-20 w-full bg-black/60 backdrop-blur-lg"
       x-data="{ open: false }"
     >
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-center p-3 lg:px-6"
+        class="mx-auto flex max-w-7xl items-center justify-center p-6 sm:p-3"
         aria-label="Global"
       >
         <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
@@ -97,12 +97,10 @@
             </svg>
           </button>
         </div>
-        <div
-          class="rounded-2xl shadow-lg hidden backdrop-blur-lg lg:flex lg:gap-x-4"
-        >
+        <div class="hidden lg:flex lg:gap-x-4">
           <a
             href="#Welcome"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
           >
             <span class="relative z-10">Welcome</span>
             <span
@@ -111,7 +109,7 @@
           </a>
           <a
             href="#About"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
           >
             <span class="relative z-10">About</span>
             <span
@@ -120,7 +118,7 @@
           </a>
           <a
             href="#Skills"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
           >
             <span class="relative z-10">Skills</span>
             <span
@@ -129,7 +127,7 @@
           </a>
           <a
             href="#Projects"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
           >
             <span class="relative z-10">Projects</span>
             <span
@@ -138,7 +136,7 @@
           </a>
           <a
             href="#Contact"
-            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+            class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
           >
             <span class="relative z-10">Contact</span>
             <span
@@ -213,7 +211,7 @@
               >
                 <a
                   :href="`#${item}`"
-                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70 hover:text-purple-300"
+                  class="block rounded-xl bg-white/10 px-4 py-4 text-lg font-semibold text-white shadow-md backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-purple-900/70"
                   @click="open = false"
                   x-text="item"
                 ></a>
@@ -390,196 +388,35 @@
           </p>
         </div>
 
+        <!-- Word Cloud – Purple Blob Hover -->
         <div
-          class="my-24 sm:flex sm:flex-wrap grid grid-cols-2 items-center text-center justify-center gap-3 sm:gap-4 hover:cursor-default"
+          data-aos="fade-up"
+          data-aos-delay="550"
+          x-data="{
+    skills: [
+      'HTML5','CSS3','JavaScript','Tailwind','Bootstrap',
+      'Git','GitHub','React','TypeScript','Node.js',
+      'Vite','VS Code'
+    ]
+  }"
+          class="relative my-24 flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-center"
         >
-          <!-- HTML5 -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="100"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_#f97316]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-500"
-              >HTML5</span
+          <template x-for="(skill, i) in skills" :key="i">
+            <div
+              x-data="{ x: 0, y: 0 }"
+              @mousemove="x = $event.offsetX; y = $event.offsetY"
+              @mouseleave="x = 9999; y = 9999"
+              class="relative group select-none px-5 sm:px-7 py-3 sm:py-4 rounded-full text-white font-semibold transition-transform duration-300 ease-out hover:scale-125 overflow-hidden"
+              :style="`font-size: ${1 + Math.random() * 0.8}rem;`"
             >
-          </div>
-
-          <!-- CSS3 -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="200"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
-              >CSS3</span
-            >
-          </div>
-
-          <!-- JavaScript -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
-              >JavaScript</span
-            >
-          </div>
-
-          <!-- Tailwind CSS -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-400/10 hover:shadow-[0_0_15px_#22d3ee]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-cyan-400"
-              >Tailwind CSS</span
-            >
-          </div>
-
-          <!-- Bootstrap -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="500"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-purple-500 hover:bg-purple-500/10 hover:shadow-[0_0_15px_#a855f7]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-purple-500"
-              >Bootstrap</span
-            >
-          </div>
-
-          <!-- Git -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="600"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-orange-400 hover:bg-orange-400/10 hover:shadow-[0_0_15px_#fb923c]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-orange-400"
-              >Git</span
-            >
-          </div>
-
-          <!-- GitHub -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="700"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-neutral-400 hover:bg-neutral-400/10 hover:shadow-[0_0_15px_#a3a3a3]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-neutral-400"
-              >GitHub</span
-            >
-          </div>
-
-          <!-- React -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="800"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-sky-400 hover:bg-sky-400/10 hover:shadow-[0_0_15px_#38bdf8]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-sky-400"
-              >React</span
-            >
-          </div>
-
-          <!-- TypeScript -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="900"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:bg-blue-400/10 hover:shadow-[0_0_15px_#60a5fa]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-400"
-              >TypeScript</span
-            >
-          </div>
-
-          <!-- Node.js -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1000"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_#4ade80]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-green-400"
-              >Node.js</span
-            >
-          </div>
-
-          <!-- Vite -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1100"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-yellow-400 hover:bg-yellow-400/10 hover:shadow-[0_0_15px_#facc15]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-yellow-400"
-              >Vite</span
-            >
-          </div>
-
-          <!-- VS Code -->
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1200"
-            class="group flex h-12 px-4 items-center justify-center rounded-full border border-white transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 hover:shadow-[0_0_15px_#3b82f6]"
-          >
-            <span
-              class="text-white font-semibold tracking-wide text-sm sm:text-base transition-colors duration-300 group-hover:text-blue-500"
-              >VS Code</span
-            >
-          </div>
+              <span class="relative z-10" x-text="skill"></span>
+              <span
+                class="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100 blur-xl"
+                :style="`background: radial-gradient(140px circle at ${x}px ${y}px, rgba(168,85,247,0.55), rgba(126,34,206,0.15) 70%, transparent 100%); filter: brightness(1.8) saturate(1.6);`"
+              ></span>
+            </div>
+          </template>
         </div>
-
-        <!-- POTENTIAL LIGHT THEME
-          
-          <div
-            class="flex flex-wrap gap-3 p-6 bg-pink-50 rounded-lg justify-center"
-          >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >HTML5</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >CSS3</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >JavaScript</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >React</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >Tailwind</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >Git</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >Node.js</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >Python</span
-            >
-            <span
-              class="px-4 py-2 bg-white text-gray-400 hover:text-pink-500 rounded-full shadow transition"
-              >TypeScript</span
-            >
-          </div> -->
       </div>
     </section>
 
