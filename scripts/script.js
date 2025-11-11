@@ -1,12 +1,6 @@
 import { projects } from '../data/ProjectData.js'; // Import the data from the 'data' folder
 
-/* global AOS */
-
 lucide.createIcons();
-
-/**
- * Selects the projects container and appends project tiles as anchor elements.
- */
 
 //  ANIMATE ON SCROLL SETTINGS
 AOS.init({
