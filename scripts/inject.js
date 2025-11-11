@@ -6,6 +6,7 @@ async function inject(id, file) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  inject('header', './components/header.html');
-  inject('footer', './components/footer.html');
+  const basePath = location.pathname.includes('/pages/') ? '../' : './';
+  inject('header', basePath + 'components/header.html');
+  inject('footer', basePath + 'components/footer.html');
 });
