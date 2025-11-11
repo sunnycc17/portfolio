@@ -4,6 +4,7 @@
       class="mx-auto flex max-w-7xl items-center justify-center p-6 sm:p-4"
       aria-label="Global"
     >
+      <!-- Mobile menu button -->
       <div class="absolute right-0 ml-auto flex p-2 lg:hidden">
         <button
           type="button"
@@ -12,7 +13,7 @@
         >
           <span class="sr-only">Open main menu</span>
           <svg
-            class="size-6"
+            class="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -27,9 +28,11 @@
           </svg>
         </button>
       </div>
+
+      <!-- Desktop menu -->
       <div class="hidden lg:flex lg:gap-x-4">
         <a
-          href="#Welcome"
+          href="../index.html#Welcome"
           class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
         >
           <span class="relative z-10">Welcome</span>
@@ -38,7 +41,7 @@
           ></span>
         </a>
         <a
-          href="#About"
+          href="../index.html#About"
           class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
         >
           <span class="relative z-10">About</span>
@@ -47,7 +50,7 @@
           ></span>
         </a>
         <a
-          href="#Skills"
+          href="../index.html#Skills"
           class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
         >
           <span class="relative z-10">Skills</span>
@@ -56,7 +59,7 @@
           ></span>
         </a>
         <a
-          href="#Projects"
+          href="../index.html#Projects"
           class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
         >
           <span class="relative z-10">Projects</span>
@@ -65,7 +68,7 @@
           ></span>
         </a>
         <a
-          href="#Contact"
+          href="../index.html#Contact"
           class="group relative rounded-xl px-5 py-2 text-xl font-lightweight text-white/90 ease-in-out transition-all duration-300 hover:scale-105 hover:bg-purple-900/70"
         >
           <span class="relative z-10">Contact</span>
@@ -77,9 +80,8 @@
     </nav>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu open state. -->
+  <!-- Mobile menu -->
   <div class="lg:hidden" role="dialog" aria-modal="true">
-    <!-- Sidebar, shown only when open is true -->
     <div
       class="fixed inset-y-0 right-0 z-10 w-64 overflow-hidden border-l border-white/20 bg-black/60 px-6 py-8 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-white/20 transform transition-transform duration-500 ease-in-out"
       x-show="open"
@@ -89,9 +91,8 @@
       x-transition:leave="transform transition ease-in-out duration-500"
       x-transition:leave-start="translate-x-0"
       x-transition:leave-end="translate-x-full"
-      @scroll.window.prevent
-      x-cloak
       @click.away="open = false"
+      x-cloak
     >
       <!-- Close button -->
       <div class="flex items-center justify-end">
@@ -102,7 +103,7 @@
         >
           <span class="sr-only">Close menu</span>
           <svg
-            class="size-6"
+            class="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -118,7 +119,7 @@
         </button>
       </div>
 
-      <!-- Menu links -->
+      <!-- Mobile links -->
       <div class="mt-10 flow-root">
         <div class="space-y-6 text-left">
           <template
@@ -126,7 +127,7 @@
             :key="item"
           >
             <a
-              :href="`#${item}`"
+              :href="`../index.html#${item}`"
               class="block px-4 py-4 text-lg font-semibold text-white border-purple-500 border-b"
               @click="open = false"
               x-text="item"

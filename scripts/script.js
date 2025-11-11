@@ -5,10 +5,10 @@ lucide.createIcons();
 //  ANIMATE ON SCROLL SETTINGS
 AOS.init({
   debug: true,
-  duration: 600, // faster animation
-  delay: 100, // shorter delay
+  duration: 600,
+  delay: 100,
   easing: 'ease-in-out',
-  once: false,
+  once: true, // animation occurs only once
   mirror: false,
   anchorPlacement: 'top-bottom',
 });
