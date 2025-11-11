@@ -1,14 +1,8 @@
+import { projects } from '../data/ProjectData.js'; // Import the data from the 'data' folder
+
 /* global AOS */
 
 lucide.createIcons();
-
-// script.js (in the root folder)
-import { projects } from './data/ProjectData.js'; // Import the data from the 'data' folder
-
-/**
- * Sets the current year in the footer element.
- */
-document.getElementById('year').textContent = new Date().getFullYear();
 
 /**
  * Selects the projects container and appends project tiles as anchor elements.
