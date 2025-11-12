@@ -412,4 +412,18 @@
 
   <script src="./scripts/inject.js"></script>
   <script type="module" src="./scripts/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Wait for header/footer injection to finish
+      await inject('header', '../components/header.html');
+      await inject('footer', '../components/footer.html');
+
+      // Then fix links
+      const isGithub = location.hostname.includes('github.io');
+      const prefix = isGithub ? '/portfolio/' : '../';
+      document.querySelectorAll('a[data-link]').forEach((a) => {
+        a.href = prefix + a.dataset.link;
+      });
+    });
+  </script>
 </html>
